@@ -1,8 +1,8 @@
 <?php
 
-class Controller_Checkout extends Controller_Base
+class Controller_Checkout extends Controller_Template
 {
-	public $template = 'user/template';
+	// public $template = 'user/template';
 	public function action_index()
 	{
 		$data["subnav"] = array('index'=> 'active' );

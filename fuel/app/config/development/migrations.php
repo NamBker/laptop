@@ -18,6 +18,8 @@ return array (
         9 => '010_create_vanchuyens',
         10 => '011_create_categories',
         11 => '012_create_carts',
+        12 => '013_create_checkouts',
+        13 => '014_create_prices',
       ),
     ),
     'module' => 

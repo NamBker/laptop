@@ -14,6 +14,7 @@
 	<?php echo Asset::css('user.css'); ?>
 
 
+
 </head>
 <body>
 	<?php include("layout/header_eara.php"); ?>
@@ -56,6 +57,8 @@
 	<?php echo Asset::js('bxslider.min.js'); ?>
 	<?php echo Asset::js('script.slider.js'); ?>
 	<?php echo Asset::js('bootbox.min.js'); ?>
+
+
 	
 </body>
 </html>

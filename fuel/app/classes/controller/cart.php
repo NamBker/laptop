@@ -13,11 +13,11 @@ class Controller_Cart extends Controller_Base
 			'where' => array('user_id' => $this->current_user->id)));
 		foreach($data['cart'] as $product) 
 		{
-		  
-		    $product_type = Model_Sanpham::find('all',array(
-			'where' => array('id' => $product->product_id))); 
+
+			$product_type = Model_Sanpham::find('all',array(
+				'where' => array('id' => $product->product_id))); 
 		    // printf($product_type->i);
-		  
+
 		}
 
 		$this->template->title = 'Cart';
@@ -29,30 +29,40 @@ class Controller_Cart extends Controller_Base
 			Session::set_flash('error','You have not login');
 			Response::redirect('home');
 		}
- 		$sanpham = Model_Sanpham::find($id);
+		$sanpham = Model_Sanpham::find($id);
 		is_null($id) and Response::redirect('home');
 		$cart = Model_Cart::forge(array(
-	            'product_id' => $sanpham->id,
-	            'price' => "",
-	            "quantity" => "",	           
-	            "user_id" => $this->current_user->id,	           
-	        ));
-			if ($cart and $cart->save())
-				{
-					Session::set_flash('success','Đã add sản phẩm vào cart');
-					Response::redirect('home');
-				}
-				else
-				{
-					Session::set_flash('error', e('Could not save cart.'));
-				}
+			'product_id' => $sanpham->id,
+			'price' => "",
+			"quantity" => "",	           
+			"user_id" => $this->current_user->id,	           
+			));
+		if ($cart and $cart->save())
+		{
+			Session::set_flash('success','Đã add sản phẩm vào cart');
+			Response::redirect('home');
+		}
+		else
+		{
+			Session::set_flash('error', e('Could not save cart.'));
+		}
 	}
+	public function action_delete($id = null)
+	{ 
+		if ($cart = Model_Cart::find($id)){
+			$cart->delete();
+			Session::set_flash('success', e('Deleted cart #'.$id));
+		}
+		else{
+			Session::set_flash('error', e('Could not delete cart #'.$id));
+		}
+		Response::redirect('cart');
+	}
+
 	public function action_checkout()
 	{
 		$data["subnav"] = array('checkout'=> 'active' );
 		$this->template->title = 'Cart &raquo; Checkout';
 		$this->template->content = View::forge('cart/checkout', $data);
 	}
-
-
 }

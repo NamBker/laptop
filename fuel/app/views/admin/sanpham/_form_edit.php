@@ -94,11 +94,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Camera Sau</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Camera Sau" type="text" alue="<?php echo $sanpham->camera_sau ?  $sanpham->camera_sau : '' ?>" name="camera_sau">
+              <input class="form-control" id="exampleInputEmail1" placeholder="Camera Sau" type="text" value="<?php echo $sanpham->camera_sau ?  $sanpham->camera_sau : '' ?>" name="camera_sau">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Quay phim</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Quay phim" type="text" alue="<?php echo $sanpham->quayphim ?  $sanpham->quayphim : '' ?>" name="quayphim">
+              <input class="form-control" id="exampleInputEmail1" placeholder="Quay phim" type="text" value="<?php echo $sanpham->quayphim ?  $sanpham->quayphim : '' ?>" name="quayphim">
             </div>
             <div class="form-group">
               <label>Category</label>
@@ -113,6 +113,10 @@
                 <option>Oppo</option>
                 <option>Lenovo</option>
               </select>
+            </div>
+             <div class="form-group">
+              <label for="exampleInputEmail1">Quantity</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Quantity" type="text" value="<?php echo $sanpham->quantity ?  $sanpham->quantity : '' ?>" name="quantity">
             </div>
 
 

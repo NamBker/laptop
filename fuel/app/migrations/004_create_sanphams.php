@@ -26,6 +26,7 @@ class Create_sanphams
 			'camera_sau' => array('constraint' => 100, 'type' => 'varchar'),
 			'quayphim' => array('constraint' => 100, 'type' => 'varchar'),
 			'category' => array('constraint' => 100, 'type' => 'varchar'),
+			'quantity' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 

@@ -14,6 +14,10 @@ return array(
 	'admin/product/search' => array('admin/sanpham/search','name' => 'admin_sanpham_index'),
 	'admin/product/search/(:category)' => array('admin/sanpham/show_by_category/$1','name' => 'admin_sanpham_show_by_category'),
 
+	'admin/sanpham/delete/(:any)' => 'admin/sanpham/delete/$1',
+
+
+	'admin/price/index' => 'admin/price/index',
 	// user
 	'user/thongtin' => 'user/thongtin',
 	'user/update'   => 'user/edit',
@@ -48,6 +52,7 @@ return array(
 	'vanchuyen'         => 'service/vanchuyen',
 	// cart dat hang
 	'cart' => 'cart/index',
+	'cart/delete/(:any)' => 'cart/delete/$1',
 
 	// 'checkout' => 'checkout/index',
 );

@@ -1,6 +1,6 @@
 <section class="content">
   <div class="row">        
-  <form role="form" action="http://project.dev/admin/sanpham/create" method="post">
+    <form role="form" action="http://project.dev/admin/sanpham/create" method="post">
       <div class="col-md-6">
         <!-- general form elements -->
         <div class="box box-primary">
@@ -126,5 +126,5 @@
           <!-- /.box-footer -->
         </div>
       </form>
-
     </div>
+

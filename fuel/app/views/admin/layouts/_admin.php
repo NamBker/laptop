@@ -49,10 +49,6 @@
               <?php echo $content; ?>
             </div>
           </div>
-
-          
-
-
         </div>
       </section>
       <!-- /.content -->

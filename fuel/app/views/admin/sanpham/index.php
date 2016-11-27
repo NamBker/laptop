@@ -28,7 +28,7 @@
                 <tr>
                   <td><?php echo $item->id; ?></td>
                   <td><?php echo $item->tensanpham; ?></td>
-                  <td><?php echo $item->created_at ?></td>
+                  <td><?php echo date('nS F, Y', $item->created_at); ?></td>
 
                   <td><?php 
                   switch ($item->category) {

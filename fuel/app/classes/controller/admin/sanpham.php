@@ -44,7 +44,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 				'camera_sau' => Input::post('camera_sau'),
 				'quayphim' => Input::post('quayphim'),
 				'category' => Input::post('category'),
-				'gia' => Input::post('gia'),
+				'quantity' => "",
 				));
 
 			if ($sanpham and $sanpham->save())
@@ -91,6 +91,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			$sanpham->camera_sau = Input::post('camera_sau');
 			$sanpham->quayphim = Input::post('quayphim');
 			$sanpham->category = Input::post('category');
+			$sanpham->quantity = Input::post('quantity');
 
 			if ($sanpham->save())
 			{
@@ -117,7 +118,6 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		if ($sanpham = Model_Sanpham::find($id))
 		{
 			$sanpham->delete();
-
 			Session::set_flash('success', e('Deleted sanpham #'.$id));
 		}
 

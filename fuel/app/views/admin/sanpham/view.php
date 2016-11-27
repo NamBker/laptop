@@ -52,6 +52,11 @@
 	<strong>Quayphim:</strong>
 	<?php echo $sanpham->quayphim; ?></p>
 <p>
+<p>
+	<strong>Số lượng trong kho:</strong>
+	<?php echo $sanpham->quantity; ?></p>
+<p>
+
 
 <?php echo Html::anchor('admin/sanpham/edit/'.$sanpham->id, 'Edit'); ?> |
 <?php echo Html::anchor('admin/sanpham', 'Back'); ?>
