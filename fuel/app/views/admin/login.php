@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-3">
-		<?php echo Form::open(array()); ?>
+		<?php echo Form::open(array('action' => 'http://project.dev/admin/login', 'method' => 'POST')); ?>
 
 			<?php if (isset($_GET['destination'])): ?>
 				<?php echo Form::hidden('destination', $_GET['destination']); ?>

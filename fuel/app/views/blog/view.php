@@ -1,4 +1,7 @@
-<h2><?php echo $post->title ?></h2>
+<div class="container">
+	<div class="rows">
+		<div class="col-md-8">
+			<h2><?php echo $post->title ?></h2>
  
 <p>
     <strong>Posted: </strong><?php echo date('nS F, Y', $post->created_at) ?> (<?php echo Date::time_ago($post->created_at)?>)
@@ -65,3 +68,6 @@
 		</div>	 
  	</div>
 <?php echo Form::close() ?>
+		</div>
+	</div>
+</div>

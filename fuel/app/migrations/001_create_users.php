@@ -12,6 +12,9 @@ class Create_users
 			'password' => array('constraint' => 255, 'type' => 'varchar'),
 			'group' => array('constraint' => 11, 'type' => 'int'),
 			'email' => array('constraint' => 255, 'type' => 'varchar'),
+			'address' => array('constraint' => 255, 'type' => 'varchar'),
+			'phone' => array('constraint' => 15, 'type' => 'int'),
+			'image' => array('constraint' => 255, 'type' => 'varchar'),
 			'last_login' => array('constraint' => 11, 'type' => 'int'),
 			'login_hash' => array('constraint' => 255, 'type' => 'varchar'),
 			'profile_fields' => array('type' => 'text'),
@@ -20,7 +23,6 @@ class Create_users
 
 		), array('id'));
 	}
-
 	public function down()
 	{
 		\DBUtil::drop_table('users');

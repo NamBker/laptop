@@ -1,4 +1,4 @@
-<h2>Listing Posts</h2>
+<h2>Tin tức </h2>
 <br>
 <?php if ($posts): ?>
 <table class="table table-striped">

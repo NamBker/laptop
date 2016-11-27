@@ -1,9 +1,5 @@
-<h2>Recent Posts</h2>
- 
-<?php foreach ($posts as $post): ?>
- 
-    <h3><?php echo Html::anchor('blog/view/'.$post->slug, $post->title) ?></h3>
-     
-    <p><?php echo $post->summary ?></p>
- 
-<?php endforeach; ?>
+<?php include("layout/_slider_area.php"); ?>
+<?php include("layout/_promo_area.php"); ?>
+<?php include("layout/_maincontent_area.php"); ?>
+<?php include("layout/_brands_area.php"); ?>
+<?php include("layout/_product_widget_area.php"); ?>

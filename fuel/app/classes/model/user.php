@@ -8,6 +8,9 @@ class Model_User extends \Orm\Model
 		'password',
 		'group',
 		'email',
+		'address',
+		'phone',
+		'image',
 		'last_login',
 		'login_hash',
 		'profile_fields',
@@ -27,7 +30,7 @@ class Model_User extends \Orm\Model
 	);
 
 	protected static $_table_name = 'users';
-	protected static $_has_many = array('posts', 'comments');
-	protected static $_belongs_to = array('user');
+	protected static $_has_many = array('posts', 'comments','cart');
+	protected static $_belongs_to = array('users');
 
 }
