@@ -5,7 +5,7 @@ class Model_Price extends \Orm\Model
 		'id',
 		'product_id',
 		'price',
-		'import_quantity',
+		'quantity',
 		'time_start',
 		'time_end',
 		'created_at',
@@ -34,6 +34,5 @@ class Model_Price extends \Orm\Model
 		return $val;
 	}
 	protected static $_table_name = 'prices';
-	protected static $_belongs_to = array('sanphams');
 
 }

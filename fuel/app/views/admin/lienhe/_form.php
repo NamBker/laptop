@@ -1,3 +1,11 @@
+<section class="content">
+  <div class="row">        
+    <form role="form" action="http://project.dev/admin/sanpham/create" method="post">
+      <div class="col-md-9">
+        <!-- general form elements -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">New Product</h3>
 <?php echo Form::open(array("class"=>"form-horizontal")); ?>
 
 	<fieldset>
@@ -37,3 +45,9 @@
 			<?php echo Form::submit('submit', 'Save', array('class' => 'btn btn-primary')); ?>		</div>
 	</fieldset>
 <?php echo Form::close(); ?>
+</div>
+</div>
+</div>
+</form>
+</div>
+</section>	

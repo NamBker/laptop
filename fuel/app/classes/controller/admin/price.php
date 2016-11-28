@@ -27,7 +27,7 @@ class Controller_Admin_Price extends Controller_Admin
 				$price = Model_Price::forge(array(
 					'product_id' => Input::post('product_id'),
 					'price' => Input::post('price'),
-					'import_quantity' => Input::post('import_quantity'),
+					'quantity' => Input::post('quantity'),
 					'time_start' => Input::post('time_start'),
 					'time_end' => Input::post('time_end'),
 				));
@@ -60,7 +60,7 @@ class Controller_Admin_Price extends Controller_Admin
 		{
 			$price->product_id = Input::post('product_id');
 			$price->price = Input::post('price');
-			$price->import_quantity = Input::post('import_quantity');
+			$price->quantity = Input::post('quantity');
 			$price->time_start = Input::post('time_start');
 			$price->time_end = Input::post('time_end');
 
@@ -83,7 +83,7 @@ class Controller_Admin_Price extends Controller_Admin
 			{
 				$price->product_id = $val->validated('product_id');
 				$price->price = $val->validated('price');
-				$price->import_quantity = $val->validated('import_quantity');
+				$price->quantity = $val->validated('quantity');
 				$price->time_start = $val->validated('time_start');
 				$price->time_end = $val->validated('time_end');
 

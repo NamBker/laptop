@@ -14,9 +14,9 @@
 
 	</div>
 	<div class="form-group">
-	<?php echo Form::label('Import_quantity', 'import_quantity', array('class'=>'control-label')); ?>
+	<?php echo Form::label('quantity', 'quantity', array('class'=>'control-label')); ?>
 
-		<?php echo Form::input('import_quantity', Input::post('import_quantity', isset($price) ? $price->import_quantity : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Import_quantity')); ?>
+		<?php echo Form::input('quantity', Input::post('quantity', isset($price) ? $price->quantity : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'quantity')); ?>
 
 	</div>
 	<div class="form-group">

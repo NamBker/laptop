@@ -10,7 +10,7 @@ class Create_prices
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'product_id' => array('constraint' => 11, 'type' => 'int'),
 			'price' => array('constraint' => 11, 'type' => 'int'),
-			'import_quantity' => array('constraint' => 11, 'type' => 'int'),
+			'quantity' => array('constraint' => 11, 'type' => 'int'),
 			'time_start' => array('type' => 'date'),
 			'time_end' => array('type' => 'date'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),

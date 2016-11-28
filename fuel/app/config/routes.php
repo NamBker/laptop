@@ -16,6 +16,8 @@ return array(
 
 	'admin/sanpham/delete/(:any)' => 'admin/sanpham/delete/$1',
 
+	'admin/price' => 'admin/price/index',
+	'admin/priceimprot' => 'admin/priceimport/index',
 
 	'admin/price/index' => 'admin/price/index',
 	// user

@@ -17,11 +17,15 @@
     <?php echo Asset::css("all_skins.min.css"); ?>
     <?php echo Asset::css("blue.css"); ?>
     <?php echo Asset::css("styles.css"); ?>
+        <?php echo Asset::js('bootbox.min.js'); ?>
+
     
 </head>
 <?php if ($current_user): ?>
 
+
   <body class="hold-transition skin-blue sidebar-mini">
+
 
     <?php include 'layouts/_admin.php' ?>
 
@@ -50,6 +54,18 @@
 <?php else: ?>
 
     <body class="hold-transition login-page">
+    <?php if (Session::get_flash('success')): ?>
+      <script language="javascript">
+        bootbox.alert("<?php echo Session::get_flash('success'); ?>");
+
+      </script>
+    <?php endif; ?>
+    <?php if (Session::get_flash('error')): ?>
+      <script language="javascript">
+        bootbox.alert("<?php echo Session::get_flash('error'); ?>");
+      </script>
+    <?php endif; ?>
+
         <div class="login-box">
 
           <div class="login-logo">

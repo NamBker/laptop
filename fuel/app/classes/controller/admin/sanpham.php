@@ -45,6 +45,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 				'quayphim' => Input::post('quayphim'),
 				'category' => Input::post('category'),
 				'quantity' => "",
+				'price' => "",
 				));
 
 			if ($sanpham and $sanpham->save())
@@ -92,6 +93,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			$sanpham->quayphim = Input::post('quayphim');
 			$sanpham->category = Input::post('category');
 			$sanpham->quantity = Input::post('quantity');
+			$sanpham->price = Input::post('price');
 
 			if ($sanpham->save())
 			{

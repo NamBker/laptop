@@ -78,21 +78,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="http://project.dev/admin/price/index"><i class="fa fa-circle-o"></i>import prices(nhập vào)</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i>sale prices(bán ra)</a></li>
+            <li><a href="http://project.dev/admin/priceimport/index"><i class="fa fa-circle-o"></i>import prices(nhập vào)</a></li>
+            <li><a href="http://project.dev/admin/price/index"><i class="fa fa-circle-o"></i>sale prices(bán ra)</a></li>
             <li><a href=""><i class="fa fa-circle-o"></i> interest(lãi)</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>Order</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i>Table Order</a></li>
             <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
             <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
             <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>

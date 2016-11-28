@@ -13,6 +13,9 @@
 	<?php echo Asset::css('styles.css'); ?>
 	<?php echo Asset::css('user.css'); ?>
 
+	<?php echo Asset::js('bootbox.min.js'); ?>
+
+
 
 
 </head>
@@ -35,12 +38,13 @@
 	<?php echo $content ?>
 	<?php if (Session::get_flash('success')): ?>
 	  <script language="javascript">
-	    alert("<?php echo Session::get_flash('success'); ?>");
+	    bootbox.alert("<?php echo Session::get_flash('success'); ?>");
+
 	  </script>
 	<?php endif; ?>
 	<?php if (Session::get_flash('error')): ?>
 	  <script language="javascript">
-	    alert("<?php echo Session::get_flash('error'); ?>");
+	    bootbox.alert("<?php echo Session::get_flash('error'); ?>");
 	  </script>
 	<?php endif; ?>
 
@@ -49,6 +53,7 @@
 	<?php include("layout/footer_bottom_area.php"); ?>
 
 	
+
 	<?php echo Asset::js('https://code.jquery.com/jquery.min.js'); ?>
 	<?php echo Asset::js('bootstrap.min.js'); ?>
 	<?php echo Asset::js('owl.carousel.min.js'); ?>
@@ -56,8 +61,6 @@
 	<?php echo Asset::js('main.js'); ?>
 	<?php echo Asset::js('bxslider.min.js'); ?>
 	<?php echo Asset::js('script.slider.js'); ?>
-	<?php echo Asset::js('bootbox.min.js'); ?>
-
 
 	
 </body>

@@ -23,6 +23,7 @@ class Model_Sanpham extends \Orm\Model
 		'quayphim',
 		'category',
 		'quantity',
+		'price',
 		'created_at',
 		'updated_at',
 	);
@@ -39,7 +40,7 @@ class Model_Sanpham extends \Orm\Model
 	);
 	protected static $_belongs_to = array('users','carts');
 	protected static $_table_name = 'sanphams';
-	protected static $_has_many = array('prices');
+	protected static $_has_many = array('prices','priceimports');
 
 
 }
