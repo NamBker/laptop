@@ -1,6 +1,6 @@
 <section class="content">
   <div class="row">        
-    <form role="form" action="http://project.dev/admin/sanpham/create" method="post">
+    <form role="form"  method="post">
       <div class="col-md-9">
         <!-- general form elements -->
         <div class="box box-primary">

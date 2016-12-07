@@ -13,13 +13,9 @@ return array(
 	'admin/product' => array('admin/sanpham', 'name' => 'admin_sanpham'),
 	'admin/product/search' => array('admin/sanpham/search','name' => 'admin_sanpham_index'),
 	'admin/product/search/(:category)' => array('admin/sanpham/show_by_category/$1','name' => 'admin_sanpham_show_by_category'),
-
 	'admin/sanpham/delete/(:any)' => 'admin/sanpham/delete/$1',
-
-	'admin/price' => 'admin/price/index',
-	'admin/priceimprot' => 'admin/priceimport/index',
-
 	'admin/price/index' => 'admin/price/index',
+	'admin/user' => 'admin/user/index',
 	// user
 	'user/thongtin' => 'user/thongtin',
 	'user/update'   => 'user/edit',
@@ -30,8 +26,6 @@ return array(
 	'home/add_to_cart/(:any)' => 'cart/add/$1',
 	'sanpham/add_to_cart/(:any)' => 'sanpham/addcart/$1',
 	'sanpham' => 'sanpham/index',
-
-
 	// category
 	'category/samsung'   => 'sanpham/samsung',
 	'category/sony'      => 'sanpham/sony',
@@ -52,9 +46,5 @@ return array(
 	'hoidap'            => 'service/hoidap',
 	'doitrahang'        => 'service/doitrahang',
 	'vanchuyen'         => 'service/vanchuyen',
-	// cart dat hang
-	'cart' => 'cart/index',
-	'cart/delete/(:any)' => 'cart/delete/$1',
-
 	// 'checkout' => 'checkout/index',
 );

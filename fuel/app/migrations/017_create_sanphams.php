@@ -1,14 +1,13 @@
 <?php
-
 namespace Fuel\Migrations;
-
 class Create_sanphams
 {
 	public function up()
 	{
 		\DBUtil::create_table('sanphams', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
-			'tensanpham' => array('constraint' => 100, 'type' => 'varchar'),
+			'tensanpham' => array('constraint' => 255, 'type' => 'varchar'),
+			'slug' => array('constraint' => 255, 'type' => 'varchar'),
 			'kichthuoc' => array('constraint' => 100, 'type' => 'varchar'),
 			'bangtan' => array('constraint' => 100, 'type' => 'varchar'),
 			'cpu' => array('constraint' => 100, 'type' => 'varchar'),
@@ -27,13 +26,10 @@ class Create_sanphams
 			'quayphim' => array('constraint' => 100, 'type' => 'varchar'),
 			'category' => array('constraint' => 100, 'type' => 'varchar'),
 			'quantity' => array('constraint' => 11, 'type' => 'int'),
-			'price' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
-
 		), array('id'));
 	}
-
 	public function down()
 	{
 		\DBUtil::drop_table('sanphams');

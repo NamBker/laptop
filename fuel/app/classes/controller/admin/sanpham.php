@@ -1,32 +1,26 @@
 <?php
 class Controller_Admin_Sanpham extends Controller_Admin
 {
-
 	public function action_index()
 	{
 		$data['sanphams'] = Model_Sanpham::find('all');
 		$this->template->title = "Sanphams";
 		$this->template->content = View::forge('admin/sanpham/index', $data);
-
 	}
-
 	public function action_view($id = null)
 	{
 		$data['sanpham'] = Model_Sanpham::find($id);
-
 		$this->template->title = "Sanpham";
 		$this->template->content = View::forge('admin/sanpham/view', $data);
-
 	}
-
 	public function action_create()
 	{
 		$view = View::forge('admin/sanpham/create');
-
 		if (Input::method() == 'POST')
 		{
 			$sanpham = Model_Sanpham::forge(array(
 				'tensanpham' => Input::post('tensanpham'),
+				'slug' => Inflector::friendly_title(Input::post('tensanpham'), '-', true),
 				'kichthuoc' => Input::post('kichthuoc'),
 				'bangtan' => Input::post('bangtan'),
 				'cpu' => Input::post('cpu'),
@@ -45,16 +39,12 @@ class Controller_Admin_Sanpham extends Controller_Admin
 				'quayphim' => Input::post('quayphim'),
 				'category' => Input::post('category'),
 				'quantity' => "",
-				'price' => "",
 				));
-
 			if ($sanpham and $sanpham->save())
 			{
 				Session::set_flash('success', e('Added sanpham #'.$sanpham->id.'.'));
-
 				Response::redirect('admin/sanpham');
 			}
-
 			else
 			{
 				Session::set_flash('error', e('Could not save sanpham.'));
@@ -62,19 +52,15 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		}
 		$this->template->title = "Sanphams";
 		$this->template->content = View::forge('admin/sanpham/create');
-
 	}
-
-
 	public function action_edit($id = null)
 	{
 		$view = View::forge('admin/sanpham/edit');
 		$sanpham = Model_Sanpham::find($id);
-
-
 		if (Input::method() == 'POST')
 		{
 			$sanpham->tensanpham = Input::post('tensanpham');
+			$sanpham->slug = Inflector::friendly_title(Input::post('tensanpham'), '-', true);
 			$sanpham->kichthuoc = Input::post('kichthuoc');
 			$sanpham->bangtan = Input::post('bangtan');
 			$sanpham->cpu = Input::post('cpu');
@@ -93,8 +79,6 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			$sanpham->quayphim = Input::post('quayphim');
 			$sanpham->category = Input::post('category');
 			$sanpham->quantity = Input::post('quantity');
-			$sanpham->price = Input::post('price');
-
 			if ($sanpham->save())
 			{
 				Session::set_flash('success','Updated sanpham #' . $id);
@@ -112,9 +96,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		 $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
 		$this->template->title = "Sanphams";
 		$this->template->content = View::forge('admin/sanpham/edit');
-
 	}
-
 	public function action_delete($id = null)
 	{
 		if ($sanpham = Model_Sanpham::find($id))
@@ -122,14 +104,11 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			$sanpham->delete();
 			Session::set_flash('success', e('Deleted sanpham #'.$id));
 		}
-
 		else
 		{
 			Session::set_flash('error', e('Could not delete sanpham #'.$id));
 		}
-
 		Response::redirect('admin/sanpham');
-
 	}
 	public function action_search($id = null){
 		$data['sanphams'] = Model_Sanpham::find('all');
@@ -142,8 +121,5 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			'where' => array('category' => $category)));
 		$this->template->title = "Sanpham";
 		$this->template->content = View::forge('admin/sanpham/index',$data,false);
-
 	}
-
 }
-	

@@ -45,11 +45,10 @@
                 </div>
               <?php endif; ?>
             </div>
-            <div class="col-md-12">
-              <?php echo $content; ?>
-            </div>
           </div>
         </div>
+        <?php echo $content; ?>
+
       </section>
       <!-- /.content -->
 

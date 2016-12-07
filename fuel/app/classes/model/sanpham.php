@@ -5,6 +5,7 @@ class Model_Sanpham extends \Orm\Model
 	protected static $_properties = array(
 		'id',
 		'tensanpham',
+		'slug',
 		'kichthuoc',
 		'bangtan',
 		'cpu',
@@ -23,7 +24,6 @@ class Model_Sanpham extends \Orm\Model
 		'quayphim',
 		'category',
 		'quantity',
-		'price',
 		'created_at',
 		'updated_at',
 	);

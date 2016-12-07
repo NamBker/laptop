@@ -24,9 +24,9 @@ class Controller_Sanpham extends Controller_Base
 		$this->template->title = "Sanpham";
 		$this->template->content = View::forge('sanpham/view', $data);
 	}
-	public function action_search($name = false){
+	public function action_search($slug = false){
 		$sanphams = $data['sanphams']= Model_Sanpham::find('all',array(
-			'where' => array('tensanpham' => $name)));
+			'where' => array('slug' => $slug)));
 
 		
 		$this->template->title = "Sanpham";

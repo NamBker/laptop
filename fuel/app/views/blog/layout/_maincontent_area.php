@@ -14,7 +14,7 @@
                                    <?php echo Asset::img('product-1.jpg') ?>
                                    <div class="product-hover">
                                     <a href="http://project.dev/home/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/home/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
-                                    <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    <a href="http://project.dev/product/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                 </div>
                             </div>
 
