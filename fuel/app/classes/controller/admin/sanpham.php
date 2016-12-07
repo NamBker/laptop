@@ -1,7 +1,6 @@
 <?php
 class Controller_Admin_Sanpham extends Controller_Admin
 {
-
 	public function action_index()
 	{
 		$data['sanphams'] = Model_Sanpham::find('all');
@@ -27,6 +26,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		{
 			$sanpham = Model_Sanpham::forge(array(
 				'tensanpham' => Input::post('tensanpham'),
+				'slug' => Inflector::friendly_title(Input::post('tensanpham'), '-', true),
 				'kichthuoc' => Input::post('kichthuoc'),
 				'bangtan' => Input::post('bangtan'),
 				'cpu' => Input::post('cpu'),
@@ -74,6 +74,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		if (Input::method() == 'POST')
 		{
 			$sanpham->tensanpham = Input::post('tensanpham');
+			$sanpham->slug = Inflector::friendly_title(Input::post('tensanpham'), '-', true);
 			$sanpham->kichthuoc = Input::post('kichthuoc');
 			$sanpham->bangtan = Input::post('bangtan');
 			$sanpham->cpu = Input::post('cpu');

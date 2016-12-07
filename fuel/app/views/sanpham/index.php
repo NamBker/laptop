@@ -113,7 +113,7 @@
                             <div class="product-overlay"></div>
                             <div class="product-icon2">
                                 <a href="http://project.dev/sanpham/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/sanpham/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
+                                <a href="http://project.dev/product/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>

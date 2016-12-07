@@ -12,7 +12,7 @@
           <div class="box-body">
             <div class="form-group">
               <label for="exampleInputEmail1">Tên sản phẩm</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm" type="text" value="<?php echo $sanpham->tensanpham ?  $sanpham->tensanpham : '' ?>"name="tensanpham" >
+              <input class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm" type="text" value="<?php echo $sanpham->tensanpham ?  $sanpham->tensanpham : '' ?>" name="tensanpham" >
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Kích thước</label>

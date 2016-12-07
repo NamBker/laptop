@@ -8,7 +8,8 @@ class Create_sanphams
 	{
 		\DBUtil::create_table('sanphams', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
-			'tensanpham' => array('constraint' => 100, 'type' => 'varchar'),
+			'tensanpham' => array('constraint' => 255, 'type' => 'varchar'),
+			'slug' => array('constraint' => 255, 'type' => 'varchar'),
 			'kichthuoc' => array('constraint' => 100, 'type' => 'varchar'),
 			'bangtan' => array('constraint' => 100, 'type' => 'varchar'),
 			'cpu' => array('constraint' => 100, 'type' => 'varchar'),
