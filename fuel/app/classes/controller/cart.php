@@ -4,21 +4,15 @@ class Controller_Cart extends Controller_Base
 	public $template = 'user/template';
 	public function action_index()
 	{
-		if(!isset($this->current_user)){
-			Session::set_flash('error','Login to add Cart');
-			Response::redirect('home');
-		}
+		// if(!isset($this->current_user)){
+		// 	Session::set_flash('error','Login to add Cart');
+		// 	Response::redirect('home');
+		// }
 		
-		$cart= $data['cart'] = Model_Cart::find('all',array(
-			'where' => array('user_id' => $this->current_user->id)));
-		foreach($data['cart'] as $product) 
-		{
-
-			$product_type = Model_Sanpham::find('all',array(
-				'where' => array('id' => $product->product_id))); 
-		    // printf($product_type->i);
-
-		}
+		$data['cart'] = Session::get('cart');
+		// $cart= $data['cart'] = Model_Cart::find('all',array(
+		// 	'where' => array('user_id' => $this->current_user->id)));
+		Debug::dump($data, 'junk', array('whatever'));
 
 		$this->template->title = 'Cart';
 		$this->template->content = View::forge('cart/index', $data,false);
@@ -47,6 +41,26 @@ class Controller_Cart extends Controller_Base
 			Session::set_flash('error', e('Could not save cart.'));
 		}
 	}
+
+
+
+	public function action_addcart($slug){
+		$sanphams = $data['sanphams']= Model_Sanpham::find('all',array(
+			'where' => array('slug' => $slug)));
+		if(is_null($sanphams)){
+			Session::set_flash("error","Dont add to cart");
+			Response::redirect('/');
+		} 
+
+			Session::set('cart',$sanphams);	
+			Session::set_flash("success","You add To Cart");
+			Response::redirect('/');
+
+
+	}
+
+
+
 	public function action_delete($id = null)
 	{ 
 		if ($cart = Model_Cart::find($id)){

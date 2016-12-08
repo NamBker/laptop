@@ -51,4 +51,5 @@ return array(
 	'doitrahang'        => 'service/doitrahang',
 	'vanchuyen'         => 'service/vanchuyen',
 	// 'checkout' => 'checkout/index',
+	'add-to-cart/(:any)' => 'cart/addcart/$1',
 );

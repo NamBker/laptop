@@ -78,13 +78,13 @@
                                         </td>
 
                                         <td class="product-thumbnail">
-                                            <a href="http://project.dev/product/<?php echo "$item->product_id" ?>">
+                                            <a href="http://project.dev/product/<?php echo $item->tensanpham ?>">
                                                 <?php echo Asset::img('product-thumb-2.jpg',array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
                                             </a>
                                         </td>
 
                                         <td class="product-name">
-                                            <a href="single-product.html"><?php echo "$item->product_id" ?></a> 
+                                            <a href="single-product.html"><?php echo $item->tensanpham ?></a> 
                                         </td>
 
                                         <td class="product-price">

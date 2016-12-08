@@ -12,7 +12,7 @@
 	<?php echo Asset::css('font-awesome.min.css'); ?>
 	<?php echo Asset::css('styles.css'); ?>
 	<?php echo Asset::css('user.css'); ?>
-	
+	<?php echo Asset::js('jquery-3.1.1.min.js'); ?>
 	<?php echo Asset::js('jquery.min.js'); ?>
 	<?php echo Asset::js('bootstrap.min.js'); ?>
 	<?php echo Asset::js('owl.carousel.min.js'); ?>

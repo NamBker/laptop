@@ -38,9 +38,8 @@ class Model_Sanpham extends \Orm\Model
 			'mysql_timestamp' => false,
 		),
 	);
-	protected static $_belongs_to = array('users','carts');
 	protected static $_table_name = 'sanphams';
-	protected static $_has_many = array('prices','priceimports');
+	// protected static $_has_many = array('prices','priceimports');
 
 
 }

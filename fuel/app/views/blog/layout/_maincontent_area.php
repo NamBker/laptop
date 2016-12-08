@@ -1,6 +1,7 @@
  <div class="maincontent-area">
     <div class="zigzag-bottom">
     </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -12,7 +13,8 @@
                                 <div class="product-f-image">
                                    <?php echo Asset::img('product-1.jpg') ?>
                                    <div class="product-hover">
-                                    <a href="http://project.dev/home/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/home/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
+                                    <a href="#" class="add-to-cart-link" value="<?php echo $post->slug ?>"  name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
+                                    
                                     <a href="http://project.dev/product/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                 </div>
                             </div>
@@ -26,29 +28,35 @@
 
                     <?php endforeach; ?>
                 </div>
-
                     <script>
-                        function divFunction(){
-                            var href = $('.add-to-cart-link').attr('value');
-                            var href1 = $('.add-to-cart-link').attr('name');
-                            bootbox.confirm({
-                                message: "You  want to add <b>"+href+ "</b> to cart",
-                                buttons: {
-                                    confirm: {
-                                        label: 'Yes',
-                                    },
-                                    cancel: {
-                                        label: 'No',
-                                    }
+                    $(".add-to-cart-link").click(function(){
+                      var cartadd = $(this).attr('value');
+                        bootbox.confirm({
+                            message: "You want to add<b> "+ cartadd+ "</b> in Cart",
+                            buttons: {
+                                confirm: {
+                                    label: 'Yes',
+                                    className: 'btn-success',
+                                    url: '?query='+cartadd
                                 },
+                                cancel: {
+                                    label: 'No',
+                                    className: 'btn-danger'
+                                }
+                            },
                             callback: function (result) {
-                                if(result === true){
-                                    console.log("value:"+href+". name:"+href1);
-                                            // action: window.location.href = href;
-                                        }
-                                    }
-                                });
-                        };
+                                if(result == true){
+                                    console.log('This was logged in the callback: true '); 
+                                    window.location.href = 'add-to-cart/'+cartadd; 
+                                       
+                                }
+                                else{
+                                    console.log('This was logged in the callback: false');    
+                                }
+                            }
+                        });
+                    });
+                   
                     </script>
 
 
