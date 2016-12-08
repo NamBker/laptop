@@ -20,9 +20,11 @@ class Controller_Admin_Priceimport extends Controller_Admin
 	}
 	public function action_create()
 	{
+		$data['prices'] = Model_PriceImport::find('all');
+
 		$product_id =  Input::post('product_id');
 		$quantity = Input::post('quantity_import');
-		$view = View::forge('admin/priceimport/create');
+		$view = View::forge('admin/priceimport/create',$data);
 		if (Input::method() == 'POST')
 		{
 			$priceimport = Model_Priceimport::forge(array(

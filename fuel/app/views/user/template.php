@@ -54,7 +54,7 @@
 
 	
 
-	<?php echo Asset::js('https://code.jquery.com/jquery.min.js'); ?>
+	<?php echo Asset::js('jquery.min.js'); ?>
 	<?php echo Asset::js('bootstrap.min.js'); ?>
 	<?php echo Asset::js('owl.carousel.min.js'); ?>
 	<?php echo Asset::js('jquery.sticky.js'); ?>

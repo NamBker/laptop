@@ -21,7 +21,8 @@ class Controller_Admin_Price extends Controller_Admin
 
 	public function action_create()
 	{
-		$view = View::forge('admin/price/create');
+		$data['prices'] = Model_Price::find('all');
+		$view = View::forge('admin/price/create',$data);
 		if (Input::method() == 'POST')
 		{
 				$price = Model_Price::forge(array(
@@ -36,7 +37,7 @@ class Controller_Admin_Price extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added price #'.$price->id.'.'));
 
-					Response::redirect('admin/price');
+					Response::redirect('admin/price/create');
 				}
 
 				else
@@ -113,7 +114,6 @@ class Controller_Admin_Price extends Controller_Admin
 		}
 
 		Response::redirect('admin/price');
-
 	}
 
 }

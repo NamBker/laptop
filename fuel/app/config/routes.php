@@ -5,7 +5,7 @@ return array(
 	'admin'         => 'admin/index',
 	'admin/index' => 'admin/index',
 	'admin/logout' => 'admin/logout',
-	'admin/profile(:any)' => 'admin/profile/$1',
+	'admin/profile/$1' => 'admin/profile/$1',
 	'admin/service/gioithieu' => 'admin/gioithieu/index',
 	'admin/service/lienhe' => 'admin/lienhe/index',
 	'admin/service/tintuc' => 'admin/posts/index',
@@ -14,8 +14,12 @@ return array(
 	'admin/product/search' => array('admin/sanpham/search','name' => 'admin_sanpham_index'),
 	'admin/product/search/(:category)' => array('admin/sanpham/show_by_category/$1','name' => 'admin_sanpham_show_by_category'),
 	'admin/sanpham/delete/(:any)' => 'admin/sanpham/delete/$1',
-	'admin/price/index' => 'admin/price/index',
+
+	'admin/user/view/(:any)' => 'admin/user/thongtin/$1',
+	'admin/user/delete/(:any)' => 'admin/user/delete/$1',
+	'admin/price/create' => 'admin/price/create',
 	'admin/user' => 'admin/user/index',
+
 	// user
 	'user/thongtin' => 'user/thongtin',
 	'user/update'   => 'user/edit',

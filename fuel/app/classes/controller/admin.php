@@ -98,6 +98,12 @@ class Controller_Admin extends Controller_Base
 		$this->template->title = 'Dashboard';
 		$this->template->content = View::forge('admin/dashboard',$data);
 	}
+	public function action_profile($id = null)
+	{
+		$data['user'] = Model_User::find($id);
+		$this->template->title = 'Admin Information';
+		$this->template->content = View::forge('admin/user/show',$data,false);
+	}
 
 }
 

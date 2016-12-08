@@ -121,8 +121,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="http://project.dev/admin/price/index"><i class="fa fa-circle-o"></i>import prices(nhập vào)</a></li>
-              <li><a href=""><i class="fa fa-circle-o"></i>sale prices(bán ra)</a></li>
+              <li><a href="http://project.dev/admin/priceimport/create"><i class="fa fa-circle-o"></i>import prices(nhập vào)</a></li>
+              <li><a href="http://project.dev/admin/price/create"><i class="fa fa-circle-o"></i>sale prices(bán ra)</a></li>
               <li><a href=""><i class="fa fa-circle-o"></i> interest(lãi)</a></li>
             </ul>
           </li>
