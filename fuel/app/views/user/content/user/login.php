@@ -1,16 +1,3 @@
-<?php if (Session::get_flash('success')): ?>
-  <script language="javascript">
-    alert("<?php echo implode('<p>Ban Da Dang Nhap</p>', (array) Session::get_flash('success')); ?>");
-  </script>
-
-<?php endif; ?>
-<?php if (Session::get_flash('error')): ?>
- <script language="javascript">
-  alert(" <?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>");
-</script>
-
-<?php endif; ?>
-
 <div class="single-product-area">
   <div class="zigzag-bottom"></div>
   <div class="container">

@@ -29,9 +29,7 @@ class Controller_User extends Controller_Base
 	{
 		// Already logged in
 		Auth::check() and Response::redirect('user');
-
 		$val = Validation::forge();
-
 		if (Input::method() == 'POST')
 		{
 			$val->add('email', 'Email or Username')
@@ -59,12 +57,8 @@ class Controller_User extends Controller_Base
 					}
 					else
 					{
-						$this->template->set_global('login_error', 'Login failed!');
+						Session::set_flash('error','Đăng nhập tài khoản lỗi email or password');
 					}
-				}
-				else
-				{
-					$this->template->set_global('login_error', 'Already logged in!');
 				}
 			}
 		}
