@@ -4,18 +4,20 @@ class Controller_Cart extends Controller_Base
 	public $template = 'user/template';
 	public function action_index()
 	{
-		// if(!isset($this->current_user)){
-		// 	Session::set_flash('error','Login to add Cart');
-		// 	Response::redirect('home');
-		// }
-		
 		$data['cart'] = Session::get('cart');
-		// $cart= $data['cart'] = Model_Cart::find('all',array(
-		// 	'where' => array('user_id' => $this->current_user->id)));
 		Debug::dump($data, 'junk', array('whatever'));
 
+
+		// foreach($data['cart'] as $product){
+		
+		// 	$product_type = Model_Sanpham::find('all',array(		
+		// 		'where' => array('slug' => $product))); 		
+		// }
+		// Debug::dump($product_type, 'junk', array('whatever'));
+
+
 		$this->template->title = 'Cart';
-		$this->template->content = View::forge('cart/index', $data,false);
+		$this->template->content = View::forge('cart/index',false);
 	}
 	public function action_add($id = null)
 	{ 
@@ -52,11 +54,19 @@ class Controller_Cart extends Controller_Base
 			Response::redirect('/');
 		} 
 
-			Session::set('cart',$sanphams);	
-			Session::set_flash("success","You add To Cart");
+		// Session::delete('cart');
+		$array = Session::get('cart');
+		if(is_null($array)){
+			$result = array($slug);
+			Session::set('cart',$result);
+			Session::set_flash("success","San pham dau tien duoc add to cart");
+		}
+		else{
+			$result = array($slug,Arr::filter_recursive($array));
+			Session::set('cart',$result);
+			Session::set_flash("success","San pham da duoc add to cart" );
+		}			
 			Response::redirect('/');
-
-
 	}
 
 

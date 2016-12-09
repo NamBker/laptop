@@ -70,40 +70,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <?php foreach ($cart as $item): ?>
 
-                                    <tr class="cart_item">
-                                        <td class="product-remove">
-                                            <a title="Remove this item" class="remove" href="http://project.dev/cart/delete/<?php echo $item->id ?>">×</a> 
-                                        </td>
-
-                                        <td class="product-thumbnail">
-                                            <a href="http://project.dev/product/<?php echo $item->tensanpham ?>">
-                                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
-                                            </a>
-                                        </td>
-
-                                        <td class="product-name">
-                                            <a href="single-product.html"><?php echo $item->tensanpham ?></a> 
-                                        </td>
-
-                                        <td class="product-price">
-                                            <span class="amount">£15.00</span> 
-                                        </td>
-
-                                        <td class="product-quantity">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-">
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                <input type="button" class="plus" value="+">
-                                            </div>
-                                        </td>
-
-                                        <td class="product-subtotal">
-                                            <span class="amount">£15.00</span> 
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
 
                                 <tr>
                                     <td class="actions" colspan="6">

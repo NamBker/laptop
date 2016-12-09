@@ -48,7 +48,6 @@
                                 if(result == true){
                                     console.log('This was logged in the callback: true '); 
                                     window.location.href = 'add-to-cart/'+cartadd; 
-                                       
                                 }
                                 else{
                                     console.log('This was logged in the callback: false');    
