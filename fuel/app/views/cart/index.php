@@ -46,11 +46,6 @@
                 <div class="single-sidebar">
                     <h2 class="sidebar-title">Recent Posts</h2>
                     <ul>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +65,66 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                 <?php foreach ($cart as $item): ?>
 
+                                    <tr class="cart_item">
+                                        <td class="product-remove">
+                                            <a title="Remove this item" class="remove" href="http://project.dev/cart/delete/<?php echo $item->id ?>">×</a> 
+                                        </td>
+
+                                        <td class="product-thumbnail">
+                                            <a href="http://project.dev/product/<?php echo "$item->id" ?>">
+                                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
+                                            </a>
+                                        </td>
+
+                                        <td class="product-name">
+                                            <a href="single-product.html"><?php echo "$item->tensanpham" ?></a> 
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">£15.00</span> 
+                                        </td>
+
+                                        <td class="product-quantity">
+
+                                            <script type="text/javascript">
+                                                function incrementValue()
+                                                {
+                                                    var value = parseInt(document.getElementById('number').value, 10);
+                                                    var quantity = <?php echo json_encode($item->quantity); ?>;
+                                                    value = isNaN(value) ? 0 : value;
+                                                    value++;
+                                                   
+                                                        document.getElementById('number').value = value;
+                                                
+                                                }
+                                                function reducedValue()
+                                                {
+                                                    var value = parseInt(document.getElementById('number').value, 10);
+                                                    value = isNaN(value) ? 0 : value;
+                                                    value--;
+                                                    if(value <0){
+                                                        document.getElementById('number').value = 0;
+                                                    }
+                                                    else{
+                                                        document.getElementById('number').value = value;
+                                                    }
+                                                    
+                                                }
+                                            </script>
+                                            <div class="quantity buttons_added">
+                                            <input type="button" class="minus" value="-" onclick="reducedValue()">
+                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1" id="number">
+                                                <input type="button" class="plus" value="+" onclick="incrementValue()">
+                                            </div>
+                                        </td>
+
+                                        <td class="product-subtotal">
+                                            <span class="amount">£15.00</span> 
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
 
                                 <tr>
                                     <td class="actions" colspan="6">
@@ -263,7 +317,6 @@
 </div>
 </div>
 </div>
-
 
 
 

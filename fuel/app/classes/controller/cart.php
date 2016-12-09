@@ -4,20 +4,25 @@ class Controller_Cart extends Controller_Base
 	public $template = 'user/template';
 	public function action_index()
 	{
-		$data['cart'] = Session::get('cart');
-		Debug::dump($data, 'junk', array('whatever'));
+		$result['cart'] = Session::get('cart');
 
 
-		// foreach($data['cart'] as $product){
-		
-		// 	$product_type = Model_Sanpham::find('all',array(		
-		// 		'where' => array('slug' => $product))); 		
-		// }
-		// Debug::dump($product_type, 'junk', array('whatever'));
-
-
+		// $data['cart'] = Arr::pluck($result['cart'], 'slug');
+		// // Debug::dump($data['cart']);
+		// $loz['cart'] = array();
+		// for ($i=0; $i < count($data['cart']); $i++) { 
+		// 	$product= Model_Sanpham::find('all',array(		
+		// 		'where' => array('slug' => $data['cart'][$i])));
+		// 		$loz['cart'] = Arr::insert($loz,$product,0);
+		// 	}
+		// $test['cart'] = Model_Sanpham::find('all');
+		// $res = Arr::delete($loz,'cart');
+		// $kq['cart'] =$loz;
+		// Debug::dump($kq);
+		// 
+		// 
 		$this->template->title = 'Cart';
-		$this->template->content = View::forge('cart/index',false);
+		$this->template->content = View::forge('cart/index',$result,false);
 	}
 	public function action_add($id = null)
 	{ 
@@ -50,20 +55,29 @@ class Controller_Cart extends Controller_Base
 			Session::set_flash("error","Dont add to cart");
 			Response::redirect('/');
 		} 
-		// Session::delete('cart');
+		Session::delete('cart');
 		$array = Session::get('cart');
 
-
 		if(is_null($array)){
-			Session::set('cart',array(0 => array(
-				'id' => $sanphams->id,
-				'slug' => $sanphams->slug
-				)));
+			Session::set('cart',array(0 => $sanphams
+				// change $sanpham to add Many
+				// array(
+				// 'id' => $sanphams->id,
+				// 'slug' => $sanphams->slug,
+				// 'tensanpham' => $sanphams->tensanpham
+				// // 'image' => $sanphams->image
+				// )
+				));
 			Session::set_flash("success","San pham dau tien duoc add to cart");
 		}
 		else{
 			if(is_null(Arr::search($array,$sanphams->slug))){
-				Arr::insert($array, array( array('id' => $sanphams->id, 'slug' => $sanphams->slug)), 0);
+				Arr::insert($array, array( array(
+					'id' => $sanphams->id, 
+					'slug' => $sanphams->slug,
+					'tensanpham' => $sanphams->tensanpham
+					// 'image' => $sanphams->image
+					)), 0);
 				Session::set('cart',$array);
 				Session::set_flash("success","San pham da duoc add to cart" );
 			}
