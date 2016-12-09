@@ -25,6 +25,7 @@ class Model_Cart extends \Orm\Model
 
 	protected static $_table_name = 'carts';
 	protected static $_belongs_to = array('users');
+	protected static $_has_many = array('sanphams');
 
 
 }

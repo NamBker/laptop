@@ -13,7 +13,7 @@
                                 <div class="product-f-image">
                                    <?php echo Asset::img('product-1.jpg') ?>
                                    <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link" value="<?php echo $post->slug ?>"  name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
+                                    <a href="#" class="add-to-cart-link" value="<?php echo $post->id ?>"  name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
                                     
                                     <a href="http://project.dev/product/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                 </div>

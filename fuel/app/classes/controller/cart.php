@@ -44,27 +44,33 @@ class Controller_Cart extends Controller_Base
 		}
 	}
 
-
-
-	public function action_addcart($slug){
-		$sanphams = $data['sanphams']= Model_Sanpham::find('all',array(
-			'where' => array('slug' => $slug)));
+	public function action_addcart($id = null){
+		$sanphams = Model_Sanpham::find($id);
 		if(is_null($sanphams)){
 			Session::set_flash("error","Dont add to cart");
 			Response::redirect('/');
 		} 
-
 		// Session::delete('cart');
 		$array = Session::get('cart');
+
+
 		if(is_null($array)){
-			$result = array($slug);
-			Session::set('cart',$result);
+			Session::set('cart',array(0 => array(
+				'id' => $sanphams->id,
+				'slug' => $sanphams->slug
+				)));
 			Session::set_flash("success","San pham dau tien duoc add to cart");
 		}
 		else{
-			$result = array($slug,Arr::filter_recursive($array));
-			Session::set('cart',$result);
-			Session::set_flash("success","San pham da duoc add to cart" );
+			if(is_null(Arr::search($array,$sanphams->slug))){
+				Arr::insert($array, array( array('id' => $sanphams->id, 'slug' => $sanphams->slug)), 0);
+				Session::set('cart',$array);
+				Session::set_flash("success","San pham da duoc add to cart" );
+			}
+			else{
+				Session::set_flash("error","Da add san pham" );
+			}
+			
 		}			
 			Response::redirect('/');
 	}
