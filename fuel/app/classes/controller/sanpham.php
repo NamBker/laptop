@@ -6,7 +6,7 @@ class Controller_Sanpham extends Controller_Base
 	public function action_index()
 	{
 		$data['sanphams'] = Model_Sanpham::find('all');
-		$this->template->title = "Sanphams";
+		$this->template->title = "Products";
 		$this->template->content = View::forge('sanpham/index', $data);
 
 	}

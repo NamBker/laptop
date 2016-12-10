@@ -1,12 +1,12 @@
 <?php
 
-class Controller_Checkout extends Controller_Template
+class Controller_Checkout extends Controller_Base
 {
-	// public $template = 'user/template';
+	public $template = 'user/template';
 	public function action_index()
 	{
 		$data["subnav"] = array('index'=> 'active' );
-		$this->template->title = 'Checkout &raquo; Index';
+		$this->template->title = 'Checkout';
 		$this->template->content = View::forge('checkout/index', $data);
 	}
 

@@ -14,7 +14,7 @@
 
                         <div class="item active">
                             <div class="row-fluid">
-                               <div class="caption-group">
+                             <div class="caption-group">
                                 <h2 class="caption title">
                                     by one, get one <span class="primary">50% <strong>off</strong></span>
                                 </h2>
@@ -39,7 +39,7 @@
                   
                   <div class="item">
                     <div class="row-fluid">
-                       <div class="caption-group">
+                     <div class="caption-group">
                         <h2 class="caption title">
                             by one, get one <span class="primary">50% <strong>off</strong></span>
                         </h2>
@@ -67,7 +67,7 @@
             
             <div class="item">
                 <div class="row-fluid">
-                   <div class="caption-group">
+                 <div class="caption-group">
                     <h2 class="caption title">
                         by one, get one <span class="primary">50% <strong>off</strong></span>
                     </h2>
@@ -126,287 +126,284 @@
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab1primary">
 
-                             <div class="container">
+                               <div class="container">
                                 <div class="row">
 
                                     <?php foreach($sanphams as $post): ?>
-                                       <div class="col-md-3 product1">
+                                     <div class="col-md-3 product1">
                                         <div class="product-container1">
                                             <?php echo Asset::img('product-1.jpg') ?>
                                             <div class="product-overlay"></div>
                                             <div class="product-icon2">
-                                                <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                                <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                        <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                        <div class="product-carousel-price">
-                                            <ins>$700.00</ins> <del>$100.00</del>
-                                        </div> 
+                                               <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
 
-                                    </div>
-
-                                <?php endforeach; ?>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="tab2primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Samsung"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                            <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
+                                               <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                           </div>
+                                       </div>
+                                       <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                       <div class="product-carousel-price">
                                         <ins>$700.00</ins> <del>$100.00</del>
                                     </div> 
-
                                 </div>
-
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-                    <div class="tab-pane fade" id="tab3primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Sony"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="tab4primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "LG"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-                                <?php  } endforeach; ?>
-
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="tab5primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Iphone"){
+                </div>
+                <div class="tab-pane fade" id="tab2primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Samsung"){
 
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                       <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
 
-                                </div>
-
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab6primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Xizaomi"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab7primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "HTC"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab8primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Asus"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab9primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Lennovo"){
-
-                                ?>
-                                <div class="col-md-3 product1">
-                                    <div class="product-container1">
-                                        <?php echo Asset::img('product-1.jpg') ?>
-                                        <div class="product-overlay"></div>
-                                        <div class="product-icon2">
-                                        <a href="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" class="add-to-cart-link" value="http://project.dev/category/add_to_cart/<?php echo $post->id ?>" name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i></a>
-                                            <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-
-                                </div>
-                                <?php  } endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab10primary">
-                      <div class="container">
-                        <div class="row">
-                            <?php foreach($sanphams as $post):
-                            if($post->category== "Oppo"){
-
-                                ?>
-
-                                <div class="col-md-3">
-
-                                    <div class="product-f-image">
-                                       <?php echo Asset::img('product-1.jpg') ?>
-                                       <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-
-                                <h2><a href="http://project.dev/product/<?php echo $post->tensanpham; ?>"><?php echo $post->tensanpham; ?></a></h2>
-
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
+
                             </div>
 
                             <?php  } endforeach; ?>
 
                         </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="tab-pane fade" id="tab3primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Sony"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                       <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="tab4primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "LG"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab5primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Iphone"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab6primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Xizaomi"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab7primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "HTC"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab8primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Asus"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab9primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Lennovo"){
+
+                            ?>
+                            <div class="col-md-3 product1">
+                                <div class="product-container1">
+                                    <?php echo Asset::img('product-1.jpg') ?>
+                                    <div class="product-overlay"></div>
+                                    <div class="product-icon2">
+                                        <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                       <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    </div>
+                                </div>
+                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div> 
+
+                            </div>
+                            <?php  } endforeach; ?>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab10primary">
+                  <div class="container">
+                    <div class="row">
+                        <?php foreach($sanphams as $post):
+                        if($post->category== "Oppo"){
+
+                            ?>
+
+                            <div class="col-md-3">
+
+                                <div class="product-f-image">
+                                 <?php echo Asset::img('product-1.jpg') ?>
+                                 <div class="product-hover">
+                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    <a href="http://project.dev/product/<?php echo $post->tensanpham; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                </div>
+                            </div>
+
+                            <h2><a href="http://project.dev/product/<?php echo $post->tensanpham; ?>"><?php echo $post->tensanpham; ?></a></h2>
+
+                            <div class="product-carousel-price">
+                                <ins>$700.00</ins> <del>$100.00</del>
+                            </div> 
+                        </div>
+
+                        <?php  } endforeach; ?>
+
                     </div>
                 </div>
             </div>
@@ -416,3 +413,34 @@
 </div>
 </div>
 </div>
+</div>
+            <script>
+                $(".add-to-cart-link").click(function(){
+                    var cartadd = $(this).attr('value');
+                    var namepr = $(this).attr('name');
+                    bootbox.confirm({
+                        message: "You want to add<b> "+ namepr+ "</b> in Cart",
+                        buttons: {
+                            confirm: {
+                                label: 'Yes',
+                                className: 'btn-success',
+                                url: '?query='+cartadd
+                            },
+                            cancel: {
+                                label: 'No',
+                                className: 'btn-danger'
+                            }
+                        },
+                        callback: function (result) {
+                            if(result == true){
+                                console.log('This was logged in the callback: true '); 
+                                window.location.href =  window.location.pathname+'/add-to-cart/'+cartadd; 
+                            }
+                            else{
+                                console.log('This was logged in the callback: false');    
+                            }
+                        }
+                    });
+                });
+                
+            </script>

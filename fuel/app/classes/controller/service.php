@@ -5,13 +5,13 @@ class Controller_Service extends Controller_Base
 	public function action_gioithieu()
 	{
 		$data['gioithieus'] = Model_Gioithieu::find('all');
-		$this->template->title = "Giới thiệu";
+		$this->template->title = "Shop";
 		$this->template->content = View::forge('user/header/service/gioithieu', $data,false);
 	}
 	public function action_lienhe()
 	{
 		$data['lienhes'] = Model_Lienhe::find('all');
-		$this->template->title = "Liên hệ";
+		$this->template->title = "Contact";
 		$this->template->content = View::forge('user/header/service/lienhe', $data,false);
 	}
 	public function action_tintuc()

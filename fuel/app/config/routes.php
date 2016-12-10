@@ -36,7 +36,6 @@ return array(
 	'category/lg'        => 'sanpham/lg',
 	'category/iphone'    => 'sanpham/iphone',
 	'category/backbarry' => 'sanpham/backbarry',
-	'category/add_to_cart/(:any)' => 'category/addcart/$1',
 	'product' => 'category/index',
 	'product/(:any)' => 'sanpham/search/$1', 
 	// service lien he ///
@@ -52,4 +51,5 @@ return array(
 	'vanchuyen'         => 'service/vanchuyen',
 	// 'checkout' => 'checkout/index',
 	'add-to-cart/(:any)' => 'cart/addcart/$1',
+	'category/add-to-cart/(:any)' => 'category/addcart/$1',
 );

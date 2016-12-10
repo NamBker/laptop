@@ -1,3 +1,4 @@
+
 <?php include("layout/_slider_area.php"); ?>
 <?php include("layout/_promo_area.php"); ?>
 <?php include("layout/_maincontent_area.php"); ?>

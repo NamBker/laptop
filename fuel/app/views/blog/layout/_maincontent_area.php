@@ -13,52 +13,55 @@
                                 <div class="product-f-image">
                                    <?php echo Asset::img('product-1.jpg') ?>
                                    <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link" value="<?php echo $post->id ?>"  name="<?php echo $post->tensanpham ?>"><i class="fa fa-shopping-cart"></i>Add to cart <?php echo $post->id ?></a>
-                                    
-                                    <a href="http://project.dev/product/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                     
+                                    <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>Add to cart', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
+                                    <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i> See details', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                 </div>
                             </div>
 
-                            <h2><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h2>
+                            <h2>
+                            
+                            <?php echo Html::anchor('product/'.$post->slug, $post->tensanpham)?>
+                            </h2>
 
                             <div class="product-carousel-price">
                                 <ins>$700.00</ins> <del>$100.00</del>
                             </div> 
                         </div>
-
                     <?php endforeach; ?>
                 </div>
-                    <script>
-                    $(".add-to-cart-link").click(function(){
-                      var cartadd = $(this).attr('value');
-                        bootbox.confirm({
-                            message: "You want to add<b> "+ cartadd+ "</b> in Cart",
-                            buttons: {
-                                confirm: {
-                                    label: 'Yes',
-                                    className: 'btn-success',
-                                    url: '?query='+cartadd
-                                },
-                                cancel: {
-                                    label: 'No',
-                                    className: 'btn-danger'
-                                }
+            <script>
+                $(".add-to-cart-link").click(function(){
+                    var cartadd = $(this).attr('value');
+                    var namepr = $(this).attr('name');
+                    bootbox.confirm({
+                        message: "You want to add<b> "+ namepr+ "</b> in Cart",
+                        buttons: {
+                            confirm: {
+                                label: 'Yes',
+                                className: 'btn-success',
+                                url: '?query='+cartadd
                             },
-                            callback: function (result) {
-                                if(result == true){
-                                    console.log('This was logged in the callback: true '); 
-                                    window.location.href = 'add-to-cart/'+cartadd; 
-                                }
-                                else{
-                                    console.log('This was logged in the callback: false');    
-                                }
+                            cancel: {
+                                label: 'No',
+                                className: 'btn-danger'
                             }
-                        });
+                        },
+                        callback: function (result) {
+                            if(result == true){
+                                console.log('This was logged in the callback: true '); 
+                                window.location.href = 'add-to-cart/'+cartadd; 
+                            }
+                            else{
+                                console.log('This was logged in the callback: false');    
+                            }
+                        }
                     });
-                   
-                    </script>
+                });
+                
+            </script>
 
-
+    <!-- SCRPIT -->
             </div>
         </div>
     </div>
