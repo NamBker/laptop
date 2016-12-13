@@ -52,4 +52,8 @@ return array(
 	// 'checkout' => 'checkout/index',
 	'add-to-cart/(:any)' => 'cart/addcart/$1',
 	'category/add-to-cart/(:any)' => 'category/addcart/$1',
+	'checkout' => 'checkout/index',
+	'user/checkout' => 'user/checkout/index',
+	'user/checkout/create' => 'user/checkout/create',
+	
 );

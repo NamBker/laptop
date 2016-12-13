@@ -65,7 +65,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                 <?php foreach ($cart as $item): ?>
+
+                                 <?php 
+                                 if ($cart):
+                                 foreach ($cart as $item): ?>
 
                                     <tr class="cart_item">
                                         <td class="product-remove">
@@ -124,7 +127,10 @@
                                             <span class="amount">£15.00</span> 
                                         </td>
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php endforeach; 
+                                else: echo "Cart rong";
+                                endif;
+                                ?>
 
                                 <tr>
                                     <td class="actions" colspan="6">

@@ -106,9 +106,9 @@ class Controller_User extends Controller_Base
 	}
 	public function action_thongtin()
 	{
-
+		$data['user'] = Model_User::find($this->current_user->id);
 		$this->template->title = 'Thông tin';
-		$this->template->content = View::forge('user/content/user/thongtin',$this->current_user);
+		$this->template->content = View::forge('user/content/user/thongtin',$data,false);
 	}
 }
 

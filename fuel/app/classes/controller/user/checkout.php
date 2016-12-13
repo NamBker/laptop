@@ -1,12 +1,12 @@
 <?php
-class Controller_Checkout extends Controller_Base
+class Controller_User_Checkout extends Controller_Base
 {
 	public $template = 'user/template';
 	public function action_index()
 	{
-		$data['checkouts'] = Model_Checkout::find('all');
+		$data['user'] = Model_User::find($this->current_user->id);
 		$this->template->title = "Checkout";
-		$this->template->content = View::forge('checkout/index', $data);
+		$this->template->content = View::forge('user/checkout/index', $data);
 
 	}
 
@@ -30,39 +30,30 @@ class Controller_Checkout extends Controller_Base
 		if (Input::method() == 'POST')
 		{
 			$collection =  Session::get('cart');
-			$product = Model_Sanpham::find($collection);
-			$val = Model_Checkout::validate('create');
-			if ($val->run())
+			$product_id= Arr::pluck($collection,'id');
+			foreach ($product_id as $key) {
+				$product = Model_Sanpham::find($key);
+			}
+			$user = Model_User::find($this->current_user->id);
+			$checkout = Model_Checkout::forge(array(
+				'username' => $user->username,
+				'product' => $product->slug,
+				'quantity' => 1,
+				'price' => 1,
+				'status' => false,
+				));
+			if ($checkout and $checkout->save())
 			{
-				$checkout = Model_Checkout::forge(array(
-					'username' => Input::post('username'),
-					'product' => $product->tensanpham,
-					'quantity' => Input::post('quantity'),
-					'price' => Input::post('price'),
-					'status' => Input::post('status'),
-					));
-
-				if ($checkout and $checkout->save())
-				{
-					Session::set_flash('success', 'Order success #'.$product->tensanpham.'.');
-					Session::delete('cart');
-					Response::redirect('checkout');
-				}
-
-				else
-				{
-					Session::set_flash('error', 'Could not save checkout.');
-				}
+				Session::set_flash('success', 'Order success #'.$product->slug.'.');
+				Session::delete('cart');
+				Response::redirect('user/checkout');
 			}
 			else
 			{
-				Session::set_flash('error', $val->error());
+				Session::set_flash('error', 'Could not save checkout.');
+				Response::redirect('user/checkout');
 			}
 		}
-
-		$this->template->title = "Checkouts";
-		$this->template->content = View::forge('checkout/create');
-
 	}
 
 	public function action_edit($id = null)

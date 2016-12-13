@@ -14,6 +14,7 @@ class Controller_Service extends Controller_Base
 		$this->template->title = "Contact";
 		$this->template->content = View::forge('user/header/service/lienhe', $data,false);
 	}
+	// post
 	public function action_tintuc()
 	{
 		$config = array(
@@ -38,25 +39,5 @@ class Controller_Service extends Controller_Base
 	{
 		$this->template->title = "Đăng nhập";
 		$this->template->content = View::forge('user/header/service/dangnhap');
-	}
-	public function action_muaonline()
-	{
-		$this->template->title = "Hướng dẫn mua hàng online";
-		$this->template->content = View::forge('user/header/chitiet/huongdanmuaonline');
-	}
-	public function action_hoidap()
-	{
-		$this->template->title = "Hỏi đáp";
-		$this->template->content = View::forge('user/header/chitiet/hoidap');
-	}
-	public function action_doitrahang()
-	{
-		$this->template->title = "Đổi trả hàng";
-		$this->template->content = View::forge('user/header/chitiet/doitrahang');
-	}
-	public function action_vanchuyen()
-	{
-		$this->template->title = "Vận chuyển";
-		$this->template->content = View::forge('user/header/chitiet/vanchuyen');
 	}
 }

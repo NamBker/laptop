@@ -18,10 +18,9 @@ class Controller_Cart extends Controller_Base
 		// $test['cart'] = Model_Sanpham::find('all');
 		// $res = Arr::delete($loz,'cart');
 		// $kq['cart'] =$loz;
-		// Debug::dump($kq);
-		// 
-		// 
-		$this->template->title = 'Cart';
+		// Debug::dump($result);
+
+		$this->template->title = 'Shopping Cart';
 		$this->template->content = View::forge('cart/index',$result,false);
 	}
 	public function action_add($id = null)

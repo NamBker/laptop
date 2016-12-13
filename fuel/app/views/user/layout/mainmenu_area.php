@@ -15,11 +15,16 @@
                     <li><a href="http://project.dev/sanpham">Shop page</a></li>
                     <li><a href="http://project.dev/category">Category</a></li>
                     <li><a href="http://project.dev/cart">Cart</a></li>
-                    <li><a href="http://project.dev/checkout">Checkout</a></li>
-                    <li><a href="http://project.dev/gioithieu">Store</a></li>
-                    <li><a href="http://project.dev/lienhe">Contact</a></li>
-                </ul>
-            </div>  
-        </div>
-    </div>
+                    <?php if ($current_user): ?>
+                        <li><a href="http://project.dev/user/checkout">Checkout</a></li>
+                    <?php else: ?>
+                       <li><a href="http://project.dev/checkout">Checkout</a></li>
+                   <?php endif; ?>
+
+                   <li><a href="http://project.dev/gioithieu">Store</a></li>
+                   <li><a href="http://project.dev/lienhe">Contact</a></li>
+               </ul>
+           </div>  
+       </div>
+   </div>
 </div> <!-- End mainmenu area -->

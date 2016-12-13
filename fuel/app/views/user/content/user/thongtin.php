@@ -94,6 +94,12 @@
             <div class="form-group">
               <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
             </div>
+            <div class="form-group">
+              <input type="text" name="address" id="address" tabindex="2" class="form-control" placeholder="Password" value="<?php echo $user->address ?>">
+            </div>
+            <div class="form-group">
+            <input type="text" name="phone" id="address" tabindex="2" class="form-control" placeholder="Password" value="<?php echo $user->phone ?>">
+            </div>
             <div class="form-group text-center">
               <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
               <label for="remember"> Remember Me</label>
