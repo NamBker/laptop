@@ -11,18 +11,17 @@
             </div> 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://project.dev/home">Home</a></li>
-                    <li><a href="http://project.dev/sanpham">Shop page</a></li>
-                    <li><a href="http://project.dev/category">Category</a></li>
-                    <li><a href="http://project.dev/cart">Cart</a></li>
+                    <li><?php  echo Html::anchor('home', 'Home'); ?></li>
+                    <li><?php  echo Html::anchor('sanpham', 'Shop Page'); ?></li>
+                    <li><?php  echo Html::anchor('category', 'Category'); ?></li>
+                    <li><?php  echo Html::anchor('cart', 'Cart'); ?></li>
                     <?php if ($current_user): ?>
-                        <li><a href="http://project.dev/user/checkout">Checkout</a></li>
+                    <li><?php  echo Html::anchor('user/checkout', 'Checkout'); ?></li>
                     <?php else: ?>
-                       <li><a href="http://project.dev/checkout">Checkout</a></li>
+                    <li><?php  echo Html::anchor('checkout', 'Checkout'); ?></li>
                    <?php endif; ?>
-
-                   <li><a href="http://project.dev/gioithieu">Store</a></li>
-                   <li><a href="http://project.dev/lienhe">Contact</a></li>
+                    <li><?php  echo Html::anchor('gioithieu', 'Store'); ?></li>
+                    <li><?php  echo Html::anchor('lienhe', 'Contact'); ?></li>
                </ul>
            </div>  
        </div>

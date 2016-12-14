@@ -5,13 +5,13 @@
                     <div class="user-menu">
                         <ul>
                             <?php if ($current_user): ?>
-                                    <li><a href=""><i class="fa fa-user"></i> My Account</a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                                    <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                                    <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                                    <li><a href="http://project.dev/user/thongtin"><i class="fa fa-user"></i>Hello.<?php echo $current_user->username ?></a></li>
+                                <li><?php  echo Html::anchor('user/thongtin', '<i class="fa fa-user"></i> My Account'); ?></li>
+                                <li><?php  echo Html::anchor('wishlist', '<i class="fa fa-heart"></i> Wishlist'); ?></li>
+                                <li><?php  echo Html::anchor('cart', '<i class="fa fa-user"></i> My Cart'); ?></li>
+                                <li><?php  echo Html::anchor('checkout', '<i class="fa fa-user"></i> Checkout'); ?></li>
+                                <li><?php  echo Html::anchor('user/thongtin', '<i class="fa fa-user"></i>'.$current_user->username); ?></li>
                             <?php else: ?>
-                              <li><a href="http://project.dev/dangnhap"><i class="fa fa-user"></i> Login</a></li>
+                            <li><?php  echo Html::anchor('dangnhap', '<i class="fa fa-user"></i> Login'); ?></li>
                           <?php endif; ?>
                       </ul>
                   </div>

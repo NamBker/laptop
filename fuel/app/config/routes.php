@@ -55,5 +55,5 @@ return array(
 	'checkout' => 'checkout/index',
 	'user/checkout' => 'user/checkout/index',
 	'user/checkout/create' => 'user/checkout/create',
-	
+	'cart/delete/(:any)' => 'cart/delete/$1',
 );
