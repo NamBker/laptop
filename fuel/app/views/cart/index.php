@@ -71,7 +71,6 @@
                                    if ($cart):
                                     for ($i=0; $i < $count; $i++) { 
                                      ?>
-
                                      <tr class="cart_item">
                                         <td class="product-remove">
                                             <a title="Remove this item" class="remove" href="#" value="<?php echo $cart[$i]['id'] ?>" name="<?php echo $cart[$i]['tensanpham'] ?>" >×</a> 
@@ -88,12 +87,10 @@
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="amount">£15.00</span> 
+                                            <span class="amount">£ <?php echo Num::quantity($cart[$i]['price']);   ?></span> 
                                         </td>
 
                                         <td class="product-quantity">
-
-
                                             <div class="quantity buttons_added">
                                                 <input type="button" class="minus" value="-" onclick="reducedValue()">
                                                 <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1" id="number">
@@ -102,7 +99,7 @@
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">£15.00</span> 
+                                        <input size="4" class="input-text qty text" title="tong" value="<?php echo Num::quantity($cart[$i]['price'])   ?>" min="0" step="1" id="number" disabled="disabled" style="width:80px;height: 50px;padding-left: 20px">
                                         </td>
                                     </tr>
                                     <?php }

@@ -17,7 +17,7 @@
     <?php echo Asset::css("all_skins.min.css"); ?>
     <?php echo Asset::css("blue.css"); ?>
     <?php echo Asset::css("styles.css"); ?>
-        <?php echo Asset::js('bootbox.min.js'); ?>
+    <?php echo Asset::js('bootbox.min.js'); ?>
 
     
 </head>
@@ -54,58 +54,58 @@
 <?php else: ?>
 
     <body class="hold-transition login-page">
-    <?php if (Session::get_flash('success')): ?>
-      <script language="javascript">
-        bootbox.alert("<?php echo Session::get_flash('success'); ?>");
+        <?php if (Session::get_flash('success')): ?>
+          <script language="javascript">
+            bootbox.alert("<?php echo Session::get_flash('success'); ?>");
 
-      </script>
+        </script>
     <?php endif; ?>
     <?php if (Session::get_flash('error')): ?>
       <script language="javascript">
         bootbox.alert("<?php echo Session::get_flash('error'); ?>");
-      </script>
+    </script>
+<?php endif; ?>
+
+<div class="login-box">
+
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+</div>
+<!-- /.login-logo -->
+<div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+
+    <?php echo Form::open(array('action' => 'http://project.dev/admin/login', 'method' => 'POST')); ?>
+
+    <?php if (isset($_GET['destination'])): ?>
+        <?php echo Form::hidden('destination', $_GET['destination']); ?>
     <?php endif; ?>
 
-        <div class="login-box">
-
-          <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">Sign in to start your session</p>
-
-            <?php echo Form::open(array('action' => 'http://project.dev/admin/login', 'method' => 'POST')); ?>
-
-            <?php if (isset($_GET['destination'])): ?>
-                <?php echo Form::hidden('destination', $_GET['destination']); ?>
-            <?php endif; ?>
-
-            <?php if (isset($login_error)): ?>
-                <div class="error"><?php echo $login_error; ?></div>
-            <?php endif; ?>
-
-            <div class="form-group">
-                <label for="email">Email or Username:</label>
-                <?php echo Form::input('email', Input::post('email'), array('class' => 'form-control', 'placeholder' => 'Email or Username', 'autofocus')); ?>
-
-
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <?php echo Form::password('password', null, array('class' => 'form-control', 'placeholder' => 'Password')); ?>
-
-            </div>
-
-            <div class="actions">
-                <?php echo Form::submit(array('value'=>'Login', 'name'=>'submit', 'class' => 'btn btn-lg btn-primary btn-block')); ?>
-            </div>
-
-            <?php echo Form::close(); ?>
-        </div>
-
+    <?php if (isset($login_error)): ?>
+        <div class="error"><?php echo $login_error; ?></div>
     <?php endif; ?>
+
+    <div class="form-group">
+        <label for="email">Email or Username:</label>
+        <?php echo Form::input('email', Input::post('email'), array('class' => 'form-control', 'placeholder' => 'Email or Username', 'autofocus')); ?>
+
+
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <?php echo Form::password('password', null, array('class' => 'form-control', 'placeholder' => 'Password')); ?>
+
+    </div>
+
+    <div class="actions">
+        <?php echo Form::submit(array('value'=>'Login', 'name'=>'submit', 'class' => 'btn btn-lg btn-primary btn-block')); ?>
+    </div>
+
+    <?php echo Form::close(); ?>
+</div>
+
+<?php endif; ?>
 
 
 </body>

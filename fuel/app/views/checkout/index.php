@@ -1,15 +1,3 @@
-	
-<?php if (Session::get_flash('success')): ?>
-	<script language="javascript">
-	alert("<?php echo Session::get_flash('success'); ?>");
-	</script>
-<?php endif; ?>
-<?php if (Session::get_flash('error')): ?>
-	<script language="javascript">
-	alert("<?php echo Session::get_flash('error'); ?>");
-	</script>
-<?php endif; ?>
-
 <div class="single-product-area">
 	<div class="zigzag-bottom"></div>
 	<div class="container">
@@ -112,56 +100,73 @@
 						</form>
 						<div class="woocommerce-info">Check address? <a class="showcoupon collapsed" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to en	ter your code</a>
 						</div>
-						<form id="coupon-collapse-wrap" method="post" class="checkout_coupon collapse" style="height: 50px;" action="">
-							<div id="customer_details" class="col-md-12">
-								<div class="woocommerce-billing-fields">
-									<h3>Billing Details</h3>
-									<p id="billing_first_name_field" class="form-row form-row-first validate-required">
-										<label class="" for="billing_first_name">Your Name <abbr title="required" class="required">*</abbr>
-										</label>
-										<input type="text" value="" placeholder="" id="billing_first_name" name="name" class="input-text ">
-									</p>
-									<div class="clear"></div>
+						<?php echo Form::open(array('action' => 'checkout/create', 'method' => 'post','style' =>"height: 50px",'id ' => "coupon-collapse-wrap",'class' =>'checkout_coupon collapse')); ?>
+						<div id="customer_details" class="col-md-12">
+							<div class="woocommerce-billing-fields">
+								<h3>Billing Details</h3>
+								<p id="billing_first_name_field" class="form-row form-row-first validate-required">
+									<label class="" for="billing_first_name">Your Name <abbr title="required" class="required">*</abbr>
+									</label>
+									<input type="text" value="" placeholder="" id="billing_first_name" name="username" class="input-text " required>
+								</p>
+								<div class="clear"></div>
 
-									<p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-										<label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr>
-										</label>
-										<input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text ">
-									</p>
-									<p id="billing_city_field" class="form-row form-row-wide address-field validate-required" data-o_class="form-row form-row-wide address-field validate-required">
-										<label class="" for="billing_city">Town / City <abbr title="required" class="required">*</abbr>
-										</label>
-										<input type="text" value="" placeholder="Town / City" id="billing_city" name="city" class="input-text ">
-									</p>
-									<p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
-										<label class="" for="billing_state">District</label>
-										<input type="text" id="billing_state" name="district" placeholder="State / County" value="" class="input-text ">
-									</p>
-									<p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
-										<label class="" for="billing_state">number</label>
-										<input type="text" id="billing_state" name="number" placeholder="State / County" value="" class="input-text ">
-									</p>
-									<div class="clear"></div>
-									<p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
-										<label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr>
-										</label>
-										<input type="text" value="" placeholder="" id="billing_email" name="email" class="input-text ">
-									</p>
-									<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-										<label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr>
-										</label>
-										<input type="text" value="" placeholder="" id="billing_phone" name="phone" class="input-text ">
-									</p>	
-									<div class="form-group">
+								<p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
+									<label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr>
+									</label>
+									<input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required>
+								</p>
+								<div class="clear"></div>
+								<p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
+									<label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr>
+									</label>
+									<input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required>
+								</p>
+								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+									<label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr>
+									</label>
+									<input type="text" value="" placeholder="" id="billing_phone" name="phone" class="input-text " required>
+								</p>
+								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+									<label class="" for="billing_phone">Description <abbr title="required" class="required">*</abbr>
+									</label>
+									<input type="text" value="" placeholder="" id="billing_phone" name="description" class="input-text " required>
+								</p>
+
+								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+									<label class="" for="billing_phone">Description <abbr title="required" class="required" >*</abbr>
+									</label>
+									<div class="container">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="CHECK OUT">
+											<div class='col-sm-6'>
+												<div class="form-group">
+													<div class='input-group date' id='datetimepicker1'>
+														<input type='text' class="form-control" name="datereceive" required>
+														<span class="input-group-addon">
+															<span class="glyphicon glyphicon-calendar"></span>
+														</span>
+													</div>
+												</div>
 											</div>
+											<script type="text/javascript">
+												$(function () {
+													$('#datetimepicker1').datetimepicker();
+												});
+											</script>
+										</div>
+									</div>
+								</p>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="CHECK OUT">
 										</div>
 									</div>
 								</div>
 							</div>
-						</form>
+						</div>
+						<?php echo Form::close(); ?>
 					</div>                    
 				</div>
 			</div>

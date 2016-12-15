@@ -47,13 +47,14 @@
               <label for="exampleInputEmail1">Blutooth</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Blutooth" type="text" name="bluetooth">
             </div>
-
-
+            <div class="form-group">
+              <label for="exampleInputEmail1">Âm thanh</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Âm thanh" type="text" name="amthanh">
+            </div>
             <div class="form-group">
               <label for="exampleInputFile">File input</label>
               <input id="exampleInputFile" type="file" name="image">
             </div>
-
           </div>
           <!-- /.box-body -->
         </div>
@@ -67,10 +68,7 @@
           <!-- /.box-header -->
           <!-- form start -->
           <div class="box-body">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Âm thanh</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Âm thanh" type="text" name="amthanh">
-            </div>
+
             <div class="form-group">
               <label for="exampleInputEmail1">WLAN</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="WLAN" type="text" name="wlan">
@@ -99,6 +97,14 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Quay phim</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Quay phim" type="text" name="quayphim">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Quantity</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Quantity" type="number" name="quantity">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Price</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Price" type="number" name="price">
             </div>
             <div class="form-group" >
               <label>Category</label>

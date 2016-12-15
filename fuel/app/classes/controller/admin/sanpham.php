@@ -38,7 +38,8 @@ class Controller_Admin_Sanpham extends Controller_Admin
 				'camera_sau' => Input::post('camera_sau'),
 				'quayphim' => Input::post('quayphim'),
 				'category' => Input::post('category'),
-				'quantity' => "",
+				'quantity' => Input::post('quantity'),
+				'price' => Input::post('price'),
 				));
 			if ($sanpham and $sanpham->save())
 			{
@@ -79,6 +80,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 			$sanpham->quayphim = Input::post('quayphim');
 			$sanpham->category = Input::post('category');
 			$sanpham->quantity = Input::post('quantity');
+			$sanpham->price = Input::post('price');
 			if ($sanpham->save())
 			{
 				Session::set_flash('success','Updated sanpham #' . $id);

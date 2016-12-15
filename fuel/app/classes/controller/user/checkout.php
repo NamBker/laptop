@@ -29,30 +29,42 @@ class Controller_User_Checkout extends Controller_Base
 	{
 		if (Input::method() == 'POST')
 		{
-			$collection =  Session::get('cart');
-			$product_id= Arr::pluck($collection,'id');
-			foreach ($product_id as $key) {
-				$product = Model_Sanpham::find($key);
-			}
+			$result['count'] = 0;
+			$result['cart'] = Session::get('cart');
 			$user = Model_User::find($this->current_user->id);
-			$checkout = Model_Checkout::forge(array(
-				'username' => $user->username,
-				'product' => $product->slug,
-				'quantity' => 1,
-				'price' => 1,
-				'status' => false,
-				));
-			if ($checkout and $checkout->save())
-			{
-				Session::set_flash('success', 'Order success #'.$product->slug.'.');
-				Session::delete('cart');
-				Response::redirect('user/checkout');
+			if(is_null($result['cart'])){
+				$result['count'] = 0;
+				Session::set_flash('error', 'Cart rong Null.');
 			}
-			else
-			{
-				Session::set_flash('error', 'Could not save checkout.');
-				Response::redirect('user/checkout');
+			else{
+				foreach ($result['cart'] as $key=>$value) {
+					$checkout = Model_Checkout::forge(array(
+						'user_id' =>$this->current_user->id,
+						'product' => $value['tensanpham'],
+						'quantity' => $value['quantity'],
+						'price' => $value['price'],
+						'username' => $user['username'],
+						'address' => Input::post('address'),
+						'phone' => Input::post('phone'),
+						'email' => Input::post('email'),
+						'datereceive' => Input::post('datereceive'),
+						'description' => Input::post('description'),
+						'status' => false,
+						));
+					if ($checkout and $checkout->save())
+					{
+						$result['count']++;
+					}
+					else
+					{
+						Session::set_flash('error', 'Could not save checkout.');
+						Response::redirect('user/checkout');
+					}
+				}
 			}
+			Session::set_flash('success', 'Order success !.');
+			Session::delete('cart');
+			Response::redirect('user/checkout');
 		}
 	}
 

@@ -15,11 +15,15 @@
 	<?php echo Asset::css('font-awesome.min.css'); ?>
 	<?php echo Asset::css('styles.css'); ?>
 	<?php echo Asset::css('user.css'); ?>
+    <?php echo Asset::css('bootstrap.min.css'); ?>
+	<?php echo Asset::css('bootstrap-datetimepicker.min.css'); ?> 
 
 	<?php echo Asset::js('jquery-3.1.1.min.js'); ?>
 	<?php echo Asset::js('jquery.min.js'); ?>
 	<?php echo Asset::js('bootstrap.min.js'); ?>
 	<?php echo Asset::js('bootbox.min.js'); ?>
+	<?php echo Asset::js('bootstrap-datetimepicker.js'); ?>
+	<?php echo Asset::js('locales/bootstrap-datetimepicker.fr.js'); ?>
 </head>
 <body>
 	<?php include("layout/header_eara.php"); ?>

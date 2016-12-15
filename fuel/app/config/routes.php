@@ -53,6 +53,7 @@ return array(
 	'add-to-cart/(:any)' => 'cart/addcart/$1',
 	'category/add-to-cart/(:any)' => 'category/addcart/$1',
 	'checkout' => 'checkout/index',
+	'checkout/create' => 'checkout/create', 
 	'user/checkout' => 'user/checkout/index',
 	'user/checkout/create' => 'user/checkout/create',
 	'cart/delete/(:any)' => 'cart/delete/$1',

@@ -27,8 +27,8 @@ class Controller_Cart extends Controller_Base
 		is_null($id) and Response::redirect('home');
 		$cart = Model_Cart::forge(array(
 			'product_id' => $sanpham->id,
-			'price' => "",
-			"quantity" => "",	           
+			'price' => $sanpham->price,
+			"quantity" => $sanpham->quantity,	           
 			"user_id" => $this->current_user->id,	           
 			));
 		if ($cart and $cart->save())
@@ -57,7 +57,10 @@ class Controller_Cart extends Controller_Base
 				array(
 					'id' => $sanphams->id,
 					'slug' => $sanphams->slug,
+					'quantity' => $sanphams->quantity,
+					'price' => $sanphams->price,
 					'tensanpham' => $sanphams->tensanpham
+
 				// 'image' => $sanphams->image
 					)
 				));
@@ -68,6 +71,8 @@ class Controller_Cart extends Controller_Base
 				Arr::insert($array, array( array(
 					'id' => $sanphams->id, 
 					'slug' => $sanphams->slug,
+					'price' => $sanphams->price,
+					'quantity' => $sanphams->quantity,
 					'tensanpham' => $sanphams->tensanpham
 					// 'image' => $sanphams->image
 					)), 0);
@@ -105,7 +110,10 @@ class Controller_Cart extends Controller_Base
 					array(
 						'id' => $array['cart'][$i]['id'],
 						'slug' => $array['cart'][$i]['slug'],
+						'quantity' => $array['cart'][$i]['quantity'],
+						'price' => $array['cart'][$i]['price'],
 						'tensanpham' => $array['cart'][$i]['tensanpham']
+
 						)
 					));
 			}
@@ -114,6 +122,7 @@ class Controller_Cart extends Controller_Base
 					Arr::insert($array, array( array(
 						'id' => $array['cart'][$i]['id'],
 						'slug' => $array['cart'][$i]['slug'],
+						'quantity' => $array['cart'][$i]['quantity'],
 						'tensanpham' => $array['cart'][$i]['tensanpham']
 						)), 0);
 					Session::set('cart',$array);
