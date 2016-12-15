@@ -1,5 +1,5 @@
  <div class="maincontent-area">
-        <div class="zigzag-bottom"></div>
+    <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -15,7 +15,7 @@
                                     </div>
                                 </div>
                                 
-                                <h2><a href="http://project.dev/sanphamproduct/">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><?php echo Html::anchor('sanpham/', 'Samsung '); ?></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 
-                                <h2><a href="http://project.dev/sanphamproduct/">Sony microsoft</a></h2>
+                                <h2><?php echo Html::anchor('sanpham/', 'Samsung '); ?>Sony microsoft</a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$200.00</ins> <del>$225.00</del>
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 
-                                <h2><a href="http://project.dev/sanphamproduct/">Samsung gallaxy note 4</a></h2>
+                                <h2><?php echo Html::anchor('sanpham/', 'Samsung '); ?></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$400.00</ins>

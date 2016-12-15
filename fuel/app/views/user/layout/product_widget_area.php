@@ -8,7 +8,7 @@
                         <a href="" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single-product.html">
-                                <?php echo Asset::img('product-thumb-1.jpg',array('class' => 'product-thumb')) ?>
+                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => 'product-thumb')) ?>
                             </a>
                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
                             <div class="product-wid-rating">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html">
-                                <?php echo Asset::img('product-thumb-1.jpg',array('class' => 'product-thumb')) ?>
+                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => 'product-thumb')) ?>
                             </a>
                             <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>
                             <div class="product-wid-rating">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html">
-                                <?php echo Asset::img('product-thumb-1.jpg',array('class' => 'product-thumb')) ?>
+                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => 'product-thumb')) ?>
                             </a>
                             <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
                             <div class="product-wid-rating">

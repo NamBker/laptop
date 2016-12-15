@@ -84,8 +84,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-12">
-          <form id="login-form" action="http://project.dev/dangnhap" method="post" role="form" style="display: block;">
-            <div class="form-group">
+         <?php echo Form::open(array('action' => 'dangnhap', 'method' => 'post', 'role' => 'form', 'style' => 'display: block;','id' => 'login-form')); ?>
               <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" value="<?php echo $current_user->username ?>" required>
             </div>
             <div class="form-group">
@@ -120,7 +119,7 @@
                 </div>
               </div>
             </div>
-          </form>
+          <?php echo Form::close(); ?>
         </div>
       </div>
     </div>

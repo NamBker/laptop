@@ -140,7 +140,7 @@
                                                <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                            </div>
                                        </div>
-                                       <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                       <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                        <div class="product-carousel-price">
                                         <ins>$700.00</ins> <del>$100.00</del>
                                     </div> 
@@ -166,7 +166,9 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4>
+                                 <?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?>
+                                </h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -199,7 +201,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -228,7 +230,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -255,7 +257,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -283,7 +285,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -310,7 +312,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -338,7 +340,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 
@@ -366,7 +368,7 @@
                                        <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                     </div>
                                 </div>
-                                <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                                <h4><?php echo Html::anchor('product', '<?php echo $post->tensanpham; ?>'); ?></h4>
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
                                 </div> 

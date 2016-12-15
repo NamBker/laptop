@@ -71,7 +71,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-12">
-          <form id="login-form" action="http://project.dev/dangnhap" method="post" role="form" style="display: block;">
+        <?php echo Form::open(array('action' => 'dangnhap', 'method' => 'post', 'role' => 'form', 'style' => 'display: block;','id' => 'login-form')); ?>
             <div class="form-group">
               <input type="text" name="email" id="username" tabindex="1" class="form-control" placeholder="Email" value="" required>
             </div>
@@ -99,7 +99,7 @@
               </div>
             </div>
           </form>
-          <form id="register-form" action="http://project.dev/register/create" method="post" role="form" style="display: none;">
+           <?php echo Form::open(array('action' => 'register/create/', 'method' => 'post', 'style' => 'display: none;','id' => 'register-form','enctype' => 'multipart/form-data')); ?>
             <div class="form-group">
               <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
             </div>
@@ -118,8 +118,6 @@
             <div class="form-group">
               <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
             </div>
-
-        
                 <div class="form-group">  
                   <!-- image-preview-filename input [CUT FROM HERE]-->
                   <div class="input-group image-preview">
@@ -137,7 +135,6 @@
                       </div>
                     </span>
                   </div><!-- /input-group image-preview [TO HERE]--> 
-              
             </div>
             <div class="form-group">
               <div class="row">
@@ -146,7 +143,7 @@
                 </div>
               </div>
             </div>
-          </form>
+          <?php echo Form::close(); ?>
         </div>
       </div>
     </div>

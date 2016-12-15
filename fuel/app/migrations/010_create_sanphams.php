@@ -26,8 +26,8 @@ class Create_sanphams
 			'quayphim' => array('constraint' => 100, 'type' => 'varchar'),
 			'category' => array('constraint' => 100, 'type' => 'varchar'),
 			'quantity' => array('constraint' => 11, 'type' => 'int'),
+			'image' => array('constraint' => 100, 'type' => 'varchar'),
 			'price' => array('constraint' => 11, 'type' => 'int'),
-			
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 		), array('id'));

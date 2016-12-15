@@ -1,62 +1,112 @@
-<h2>Viewing #<?php echo $sanpham->id; ?></h2>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">User Table</h3>
 
-<p>
-	<strong>Tensanpham:</strong>
-	<?php echo $sanpham->tensanpham; ?></p>
-<p>
-	<strong>Kichthuoc:</strong>
-	<?php echo $sanpham->kichthuoc; ?></p>
-<p>
-	<strong>Bangtan:</strong>
-	<?php echo $sanpham->bangtan; ?></p>
-<p>
-	<strong>Cpu:</strong>
-	<?php echo $sanpham->cpu; ?></p>
-<p>
-	<strong>Gpu:</strong>
-	<?php echo $sanpham->gpu; ?></p>
-<p>
-	<strong>Bonhotrong:</strong>
-	<?php echo $sanpham->bonhotrong; ?></p>
-<p>
-	<strong>Ram:</strong>
-	<?php echo $sanpham->ram; ?></p>
-<p>
-	<strong>Cambien:</strong>
-	<?php echo $sanpham->cambien; ?></p>
-<p>
-	<strong>Bluetooth:</strong>
-	<?php echo $sanpham->bluetooth; ?></p>
-<p>
-	<strong>Amthanh:</strong>
-	<?php echo $sanpham->amthanh; ?></p>
-<p>
-	<strong>Wlan:</strong>
-	<?php echo $sanpham->wlan; ?></p>
-<p>
-	<strong>Gps:</strong>
-	<?php echo $sanpham->gps; ?></p>
-<p>
-	<strong>Pin:</strong>
-	<?php echo $sanpham->pin; ?></p>
-<p>
-	<strong>Manhinh:</strong>
-	<?php echo $sanpham->manhinh; ?></p>
-<p>
-	<strong>Camera truoc:</strong>
-	<?php echo $sanpham->camera_truoc; ?></p>
-<p>
-	<strong>Camera sau:</strong>
-	<?php echo $sanpham->camera_sau; ?></p>
-<p>
-	<strong>Quayphim:</strong>
-	<?php echo $sanpham->quayphim; ?></p>
-<p>
-<p>
-	<strong>Số lượng trong kho:</strong>
-	<?php echo $sanpham->quantity; ?></p>
-<p>
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 150px;">
+						<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-
-<?php echo Html::anchor('admin/sanpham/edit/'.$sanpham->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/sanpham', 'Back'); ?>
+						<div class="input-group-btn">
+							<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+					<table class="table table-hover">
+						<tbody>
+						<tr>
+							<th style="float:right;">ID</th>
+							<th>User</th>
+						</tr>
+						<tr>
+							<th style="float:right;">Tensanpham:</th>
+							<th><?php echo $sanpham->tensanpham; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Kichthuoc:</th>
+							<th><?php echo $sanpham->kichthuoc; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Bangtan:</th>
+							<th><?php echo $sanpham->bangtan; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Cpu:</th>
+							<th><?php echo $sanpham->cpu; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Gpu:</th>
+							<th><?php echo $sanpham->gpu; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Bonhotrong:</th>
+							<th><?php echo $sanpham->bonhotrong; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Ram:</th>
+							<th><?php echo $sanpham->ram; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Cambien:</th>
+							<th><?php echo $sanpham->cambien; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Bluetooth:</th>
+							<th><?php echo $sanpham->bluetooth; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Amthanh:</th>
+							<th><?php echo $sanpham->amthanh; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Wlan:</th>
+							<th><?php echo $sanpham->wlan; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Gps:</th>
+							<th><?php echo $sanpham->gps; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Pin:</th>
+							<th><?php echo $sanpham->pin; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Manhinh:</th>
+							<th><?php echo $sanpham->manhinh; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Camera truoc:</th>
+							<th><?php echo $sanpham->camera_truoc; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Camera sau:</th>
+							<th><?php echo $sanpham->camera_sau; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Quayphim:</th>
+							<th><?php echo $sanpham->quayphim; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Số lượng trong kho:</th>
+							<th><?php echo $sanpham->quantity; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Giá</th>
+							<th><?php echo $sanpham->price; ?></th>
+						</tr>
+						<tr>
+							<th style="float:right;">Image</th>
+							<th><?php echo $sanpham->image; ?></th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>

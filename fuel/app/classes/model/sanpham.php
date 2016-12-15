@@ -24,6 +24,7 @@ class Model_Sanpham extends \Orm\Model
 		'quayphim',
 		'category',
 		'quantity',
+		'image',
 		'price',
 		'created_at',
 		'updated_at',

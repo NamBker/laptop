@@ -16,28 +16,28 @@
                 <div class="single-sidebar">
                     <h2 class="sidebar-title">Products</h2>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                        <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "50", "height" => "50" )) ?>
                         <h2><a href="">Sony Smart TV - 2015</a></h2>
                         <div class="product-sidebar-price">
                             <ins>$700.00</ins> <del>$100.00</del>
                         </div>                             
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                        <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "50", "height" => "50" )) ?>
                         <h2><a href="">Sony Smart TV - 2015</a></h2>
                         <div class="product-sidebar-price">
                             <ins>$700.00</ins> <del>$100.00</del>
                         </div>                             
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                        <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "50", "height" => "50" )) ?>
                         <h2><a href="">Sony Smart TV - 2015</a></h2>
                         <div class="product-sidebar-price">
                             <ins>$700.00</ins> <del>$100.00</del>
                         </div>                             
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                        <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "50", "height" => "50" )) ?>
                         <h2><a href="">Sony Smart TV - 2015</a></h2>
                         <div class="product-sidebar-price">
                             <ins>$700.00</ins> <del>$100.00</del>
@@ -78,7 +78,7 @@
 
                                         <td class="product-thumbnail">
                                             <a href="http://project.dev/product/<?php echo $cart[$i]['id'] ?>">
-                                                <?php echo Asset::img('product-thumb-2.jpg',array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
+                                                <?php echo Asset::img($cart[$i]['image'],array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
                                             </a>
                                         </td>
 
@@ -130,7 +130,7 @@
                                 <ul class="products">
                                     <li class="product">
                                         <a href="single-product.html">
-                                            <?php echo Asset::img('product-2.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "325", "height" => "325" )) ?>
+                                            <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "325", "height" => "325" )) ?>
 
                                             <h3>Ship Your Idea</h3>
                                             <span class="price"><span class="amount">£20.00</span></span>
@@ -141,7 +141,7 @@
 
                                     <li class="product">
                                         <a href="single-product.html">
-                                          <?php echo Asset::img('product-4.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "325", "height" => "325" )) ?>
+                                          <?php echo Asset::img('product-1.jpg',array('class' => "attachment-shop_catalog wp-post-image","width" => "325", "height" => "325" )) ?>
                                           <h3>Ship Your Idea</h3>
                                           <span class="price"><span class="amount">£20.00</span></span>
                                       </a>

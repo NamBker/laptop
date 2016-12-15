@@ -4,7 +4,7 @@
 		public $template = 'user/template';
 		public function action_index()
 		{
-			
+			// Session::delete('cart');
 			// $config = array(
 			// 	'pagination_url' => 'http://project.dev/blog/index',
 			// 	'total_items'    => Model_Post::count(),

@@ -29,6 +29,7 @@ class Controller_Cart extends Controller_Base
 			'product_id' => $sanpham->id,
 			'price' => $sanpham->price,
 			"quantity" => $sanpham->quantity,	           
+			"image" => $sanpham->image,	           
 			"user_id" => $this->current_user->id,	           
 			));
 		if ($cart and $cart->save())
@@ -59,6 +60,8 @@ class Controller_Cart extends Controller_Base
 					'slug' => $sanphams->slug,
 					'quantity' => $sanphams->quantity,
 					'price' => $sanphams->price,
+					'image' => $sanphams->image,
+					'image' => $sanphams->image,
 					'tensanpham' => $sanphams->tensanpham
 
 				// 'image' => $sanphams->image
@@ -72,6 +75,7 @@ class Controller_Cart extends Controller_Base
 					'id' => $sanphams->id, 
 					'slug' => $sanphams->slug,
 					'price' => $sanphams->price,
+					'image' => $sanphams->image,
 					'quantity' => $sanphams->quantity,
 					'tensanpham' => $sanphams->tensanpham
 					// 'image' => $sanphams->image
@@ -112,6 +116,7 @@ class Controller_Cart extends Controller_Base
 						'slug' => $array['cart'][$i]['slug'],
 						'quantity' => $array['cart'][$i]['quantity'],
 						'price' => $array['cart'][$i]['price'],
+						'image' => $array['cart'][$i]['image'],
 						'tensanpham' => $array['cart'][$i]['tensanpham']
 
 						)
@@ -123,6 +128,7 @@ class Controller_Cart extends Controller_Base
 						'id' => $array['cart'][$i]['id'],
 						'slug' => $array['cart'][$i]['slug'],
 						'quantity' => $array['cart'][$i]['quantity'],
+						'image' => $array['cart'][$i]['image'],
 						'tensanpham' => $array['cart'][$i]['tensanpham']
 						)), 0);
 					Session::set('cart',$array);

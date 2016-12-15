@@ -20,7 +20,7 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-3">
-     <form class="form-signin" action="/user/checkedit/" method="post" enctype="multipart/form-data">
+     <?php echo Form::open(array('action' => 'user/checkedit/', 'method' => 'post', 'style' => 'display: block;','class' => 'form-signin','enctype' => 'multipart/form-data')); ?>
       <label for="inputEmail" class="sr-only">Username</label>
       <input type="text" id="inputText" class="form-control" placeholder="Username" name="username" value="<?php echo $current_user->username ?>">
       <br>
@@ -44,7 +44,7 @@
       <br>
       <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>              
-    </form>
+    <?php  echo Form::close(); ?>
   </div>
 </div>
 <?php echo Html::anchor('blog/index', 'Back'); ?> 
