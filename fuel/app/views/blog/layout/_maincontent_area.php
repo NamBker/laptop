@@ -1,7 +1,6 @@
  <div class="maincontent-area">
     <div class="zigzag-bottom">
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -17,12 +16,9 @@
                                     <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i> See details', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                 </div>
                             </div>
-
                             <h2>
-                            
                             <?php echo Html::anchor('product/'.$post->slug, $post->tensanpham)?>
                             </h2>
-
                             <div class="product-carousel-price">
                                 <ins>$700.00</ins> <del>$100.00</del>
                             </div> 

@@ -8,10 +8,8 @@
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
-                    
                     <!-- Carousel items -->
                     <div class="carousel-inner">
-
                         <div class="item active">
                             <div class="row-fluid">
                              <div class="caption-group">
@@ -33,10 +31,8 @@
                           <div class="col-md-3"><a href="#x" class="thumbnail">
                               <?php echo Asset::img('product-1.jpg') ?>
                           </a></div>
-                          
                       </div><!--/row-fluid-->
                   </div><!--/item-->
-                  
                   <div class="item">
                     <div class="row-fluid">
                      <div class="caption-group">
@@ -46,9 +42,6 @@
                         <h4 class="caption subtitle">school supplies & backpacks.*</h4>
                         <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
                     </div>
-                    
-
-
                     <div class="col-md-3"><a href="#x" class="thumbnail">
                         <?php echo Asset::img('product-1.jpg') ?>
                     </a></div>
@@ -74,8 +67,6 @@
                     <h4 class="caption subtitle">school supplies & backpacks.*</h4>
                     <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
                 </div>
-
-                
                 <div class="col-md-3"><a href="#x" class="thumbnail">
                     <?php echo Asset::img('product-1.jpg') ?>
                 </a></div>
