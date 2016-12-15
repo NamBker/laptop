@@ -16,40 +16,61 @@ class Controller_Admin_Sanpham extends Controller_Admin
 	public function action_create()
 	{
 		$view = View::forge('admin/sanpham/create');
+
 		if (Input::method() == 'POST')
 		{
-			$sanpham = Model_Sanpham::forge(array(
-				'tensanpham' => Input::post('tensanpham'),
-				'slug' => Inflector::friendly_title(Input::post('tensanpham'), '-', true),
-				'kichthuoc' => Input::post('kichthuoc'),
-				'bangtan' => Input::post('bangtan'),
-				'cpu' => Input::post('cpu'),
-				'gpu' => Input::post('gpu'),
-				'bonhotrong' => Input::post('bonhotrong'),
-				'ram' => Input::post('ram'),
-				'cambien' => Input::post('cambien'),
-				'bluetooth' => Input::post('bluetooth'),
-				'amthanh' => Input::post('amthanh'),
-				'wlan' => Input::post('wlan'),
-				'gps' => Input::post('gps'),
-				'pin' => Input::post('pin'),
-				'manhinh' => Input::post('manhinh'),
-				'camera_truoc' => Input::post('camera_truoc'),
-				'camera_sau' => Input::post('camera_sau'),
-				'quayphim' => Input::post('quayphim'),
-				'category' => Input::post('category'),
-				'quantity' => Input::post('quantity'),
-				'price' => Input::post('price'),
-				));
-			if ($sanpham and $sanpham->save())
+			$name = Input::post('tensanpham');
+			$config = array(
+				'path' => DOCROOT.Input::post('image'),
+				'max_size'    => 1024000,
+				'new_name' => $name.time(),
+				'max_length' => 1980000,
+				'ext_whitelist' => array('img', 'jpg', 'jpeg', 'gif', 'png'),
+				);
+			Upload::process($config);
+			if (Upload::is_valid())
 			{
-				Session::set_flash('success', e('Added sanpham #'.$sanpham->id.'.'));
-				Response::redirect('admin/sanpham');
+				Upload::save();
+				$sanpham = Model_Sanpham::forge(array(
+					'tensanpham' => Input::post('tensanpham'),
+					'slug' => Inflector::friendly_title(Input::post('tensanpham'), '-', true),
+					'kichthuoc' => Input::post('kichthuoc'),
+					'bangtan' => Input::post('bangtan'),
+					'cpu' => Input::post('cpu'),
+					'gpu' => Input::post('gpu'),
+					'bonhotrong' => Input::post('bonhotrong'),
+					'ram' => Input::post('ram'),
+					'cambien' => Input::post('cambien'),
+					'bluetooth' => Input::post('bluetooth'),
+					'amthanh' => Input::post('amthanh'),
+					'wlan' => Input::post('wlan'),
+					'gps' => Input::post('gps'),
+					'pin' => Input::post('pin'),
+					'manhinh' => Input::post('manhinh'),
+					'camera_truoc' => Input::post('camera_truoc'),
+					'camera_sau' => Input::post('camera_sau'),
+					'quayphim' => Input::post('quayphim'),
+					'category' => Input::post('category'),
+					'quantity' => Input::post('quantity'),
+					'price' => Input::post('price'),
+					));
+				if ($sanpham and $sanpham->save())
+				{
+					Session::set_flash('success', e('Added sanpham #'.$sanpham->id.'.'));
+					Response::redirect('admin/sanpham');
+				}
+				else
+				{
+					Session::set_flash('error', e('Could not save sanpham.'));
+				}
+				
 			}
-			else
+			foreach (Upload::get_errors() as $file)
 			{
-				Session::set_flash('error', e('Could not save sanpham.'));
+				$arr = Upload::get_files();
+				Upload::save(DOCROOT.'assets/img',array_keys($arr));
 			}
+			
 		}
 		$this->template->title = "Sanphams";
 		$this->template->content = View::forge('admin/sanpham/create');
@@ -95,7 +116,7 @@ class Controller_Admin_Sanpham extends Controller_Admin
 		{
 			$this->template->set_global('sanpham', $sanpham, false);
 		}			
-		 $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
+		$view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
 		$this->template->title = "Sanphams";
 		$this->template->content = View::forge('admin/sanpham/edit');
 	}

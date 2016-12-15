@@ -23,7 +23,6 @@
 </head>
 <?php if ($current_user): ?>
 
-
   <body class="hold-transition skin-blue sidebar-mini">
 
 

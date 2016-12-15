@@ -47,7 +47,10 @@
               <label for="exampleInputEmail1">Blutooth</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Blutooth" type="text" value="<?php echo $sanpham->bluetooth ?  $sanpham->bluetooth : '' ?>" name="bluetooth">
             </div>
-
+            <div class="form-group">
+              <label for="exampleInputEmail1">Âm thanh</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Âm thanh" type="text" value="<?php echo $sanpham->amthanh ?  $sanpham->amthanh : '' ?>" name="amthanh">
+            </div>
 
             <div class="form-group">
               <label for="exampleInputFile">File input</label>
@@ -67,10 +70,7 @@
           <!-- /.box-header -->
           <!-- form start -->
           <div class="box-body">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Âm thanh</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Âm thanh" type="text" value="<?php echo $sanpham->amthanh ?  $sanpham->amthanh : '' ?>" name="amthanh">
-            </div>
+
             <div class="form-group">
               <label for="exampleInputEmail1">WLAN</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="WLAN" type="text" value="<?php echo $sanpham->wlan ?  $sanpham->wlan : '' ?>" name="wlan">
@@ -100,7 +100,16 @@
               <label for="exampleInputEmail1">Quay phim</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Quay phim" type="text" value="<?php echo $sanpham->quayphim ?  $sanpham->quayphim : '' ?>" name="quayphim">
             </div>
+
             <div class="form-group">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantity</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Quantity" type="text" value="<?php echo $sanpham->quantity ?  $sanpham->quantity : '' ?>" name="quantity">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Price" type="number" value="<?php echo $sanpham->price ?  $sanpham->price : '' ?>" name="price">
+              </div>
               <label>Category</label>
               <select class="form-control" name="category">
                 <option>Samsung</option>
@@ -114,10 +123,7 @@
                 <option>Lenovo</option>
               </select>
             </div>
-             <div class="form-group">
-              <label for="exampleInputEmail1">Quantity</label>
-              <input class="form-control" id="exampleInputEmail1" placeholder="Quantity" type="text" value="<?php echo $sanpham->quantity ?  $sanpham->quantity : '' ?>" name="quantity">
-            </div>
+
 
 
           </div>

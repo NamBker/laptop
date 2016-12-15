@@ -1,7 +1,6 @@
 	<?php 
 	class Controller_Blog extends Controller_Base
 	{
-
 		public $template = 'user/template';
 		public function action_index()
 		{
@@ -26,7 +25,7 @@
 			// return the view
 			$data['posts']= Model_Sanpham::find('all');
 
-			$this->template->content = View::forge('blog/index',$data);
+			$this->template->content = View::forge('blog/index',$data,false);
 			$this->template->title = "Home";
 		}
 
