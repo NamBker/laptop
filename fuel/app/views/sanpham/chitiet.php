@@ -247,10 +247,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 <script>
     $(".add-to-cart-link").click(function(){
         var cartadd = $(this).attr('value');
