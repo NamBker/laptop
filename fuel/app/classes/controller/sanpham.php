@@ -2,7 +2,6 @@
 class Controller_Sanpham extends Controller_Base
 {
 	public $template = 'user/template';
-
 	public function action_index()
 	{
 		$data['sanphams'] = Model_Sanpham::find('all');
@@ -25,10 +24,12 @@ class Controller_Sanpham extends Controller_Base
 		$this->template->content = View::forge('sanpham/view', $data);
 	}
 	public function action_search($slug = false){
-		$sanphams = $data['sanphams']= Model_Sanpham::find('all',array(
-			'where' => array('slug' => $slug)));
 
+		$data['sanphams']= Model_Sanpham::find('all',array(
+			'where' => array('slug' => $slug)));		
 		
+		$data['comments'] = Model_Comment::find('all',array(
+			'where' => array('product_id' => $data['sanphams']['1']['id'])));
 		$this->template->title = "Sanpham";
 		$this->template->content = View::forge('sanpham/chitiet',$data,false);
 

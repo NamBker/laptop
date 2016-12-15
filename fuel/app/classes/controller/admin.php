@@ -97,6 +97,7 @@ class Controller_Admin extends Controller_Base
 		$data['users'] = Model_User::count();
 		$data['product'] = Model_Sanpham::count();
 		$data['order'] = Model_Checkout::count();
+		$data['comment'] = Model_Comment::count();
 		$this->template->title = 'Dashboard';
 		$this->template->content = View::forge('admin/dashboard',$data);
 	}

@@ -5,23 +5,22 @@ class Model_Comment extends \Orm\Model
 		'id',
 		'name',
 		'email',
-		'website',
 		'message',
-		'post_id',
+		'product_id',
 		'created_at',
 		'updated_at',
-	);
+		);
 
 	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(
 			'events' => array('before_insert'),
 			'mysql_timestamp' => false,
-		),
+			),
 		'Orm\Observer_UpdatedAt' => array(
 			'events' => array('before_save'),
 			'mysql_timestamp' => false,
-		),
-	);
+			),
+		);
 
 	public static function validate($factory)
 	{
@@ -34,6 +33,5 @@ class Model_Comment extends \Orm\Model
 
 		return $val;
 	}
-	protected static $_belongs_to = array('post', 'user');
-
+	protected static $_table_name = 'comments';
 }
