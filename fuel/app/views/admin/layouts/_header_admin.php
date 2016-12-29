@@ -190,15 +190,19 @@
 </li>
 <li class="dropdown user user-menu">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <?php echo Asset::img("admin/user3-128x128.jpg",array("class" => "user-image")) ?>
-    <span class="hidden-xs">Alexander Pierce</span>
+      <?php  $admin = Session::get('admin');
+          echo Asset::img($admin->image,array("class" => "user-image"));
+          ?>
+    <span class="hidden-xs"><?php echo $this->current_user->username ?></span>
   </a>
   <ul class="dropdown-menu">
     <li class="user-header">
-      <?php echo Asset::img("admin/user3-128x128.jpg",array("class" => "img-circle")) ?>
-
+          <?php  $admin = Session::get('admin');
+            echo Asset::img($admin->image,array("class" => "img-circle"));
+          ?>
       <p>
-        Alexander Pierce - Web Developer
+        <?php echo $this->current_user->username ?>-
+        Web PHP   Developer Profestion
         <small>Member since Nov. 2012</small>
       </p>
     </li>

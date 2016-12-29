@@ -21,32 +21,49 @@ class Controller_Category extends Controller_Base
 		$product = Model_Product::find($id);
 		if(is_null($product)){
 			Session::set_flash("error","Dont add to cart");
-			Response::redirect('category/');
+			Response::redirect('/');
 		} 
-		Session::delete('cart');
 		$array = Session::get('cart');
+
 		if(is_null($array)){
-			Session::set('cart',array(0 => $product
+			Session::set('cart',array(0 => 
+				// $product
+				// change $sanpham to add Many
+				array(
+					'id' => $product->id,
+					'slug' => $product->slug,
+					'quantity' => $product->quantity,
+					'price' => $product->price,
+					'image' => $product->image,
+					'image' => $product->image,
+					'tensanpham' => $product->tensanpham
+
+				// 'image' => $product->image
+					)
 				));
-			Session::set_flash("success","You add <b style='color: red'>". $product->tensanpham."</b> to cart");
+			Session::set_flash("success","The first product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 		}
 		else{
 			if(is_null(Arr::search($array,$product->slug))){
 				Arr::insert($array, array( array(
 					'id' => $product->id, 
 					'slug' => $product->slug,
+					'price' => $product->price,
+					'image' => $product->image,
+					'quantity' => $product->quantity,
 					'tensanpham' => $product->tensanpham
+					// 'image' => $product->image
 					)), 0);
 				Session::set('cart',$array);
-				Session::set_flash("success","San pham da duoc add to cart" );
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 			}
 			else{
-				Session::set_flash("error","Da add san pham" );
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 			}
-			
-		}			
-			Response::redirect('category/');
 	}
+	Response::redirect('category/');
+	}			
+		
 
 
 }

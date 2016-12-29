@@ -26,8 +26,8 @@ return array(
 	'register'      => 'register/index',
 	'register/create' => 'register/create',
 	// san pham //
-	'home/add_to_cart/(:any)' => 'cart/add/$1',
-	'product/add_to_cart/(:any)' => 'product/addcart/$1',
+	'home/add-to-cart/(:any)' => 'cart/add/$1',
+	'product/add-to-cart/(:any)' => 'product/addcart/$1',
 	'product' => 'product/index',
 	// category
 	'category/samsung'   => 'product/samsung',
@@ -36,7 +36,8 @@ return array(
 	'category/iphone'    => 'product/iphone',
 	'category/backbarry' => 'product/backbarry',
 	'product' => 'product/index',
-	'product/(:any)' => 'product/search/$1', 
+
+	'product/search/(:any)' => 'product/search/$1', 
 	// service lien he ///
 	'home'           => 'blog/index',
 	'gioithieu'      => 'service/gioithieu',

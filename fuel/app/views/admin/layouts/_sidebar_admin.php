@@ -1,9 +1,14 @@
    <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <?php echo Asset::img("admin/user3-128x128.jpg",array("class" => "img-circle")) ?>        </div>
+
+          <?php  $admin = Session::get('admin');
+          echo Asset::img($admin->image,array("class" => "img-circle"));
+         
+          
+          ?>       </div>
           <div class="pull-left info">
-            <p>Alexander Pierce</p>
+            <p><?php echo $this->current_user->username ?></p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>

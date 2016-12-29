@@ -13,14 +13,14 @@
                                    <?php echo Asset::img($post->image,array('style' => 'width:212px; height:264px;')) ?>
                                    <div class="product-hover">
                                     <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>Add to cart', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
-                                    <?php echo Html::anchor('product/'.$post->slug, '<i class="fa fa-link"></i> See details', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
+                                    <?php echo Html::anchor('product/search/'.$post->slug, '<i class="fa fa-link"></i> See details', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                                 </div>
                             </div>
                             <h2>
                             <?php echo Html::anchor('product/'.$post->slug, $post->tensanpham)?>
                             </h2>
                             <div class="product-carousel-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins><?php echo $post->price ?></ins> <del>$100.00</del>
                             </div> 
                         </div>
                     <?php endforeach; ?>

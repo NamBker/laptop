@@ -23,7 +23,7 @@ class Controller_Product extends Controller_Base
 
 		// $data['product'] = Model_Product::find('all'
 		$this->template->title = "Products";
-		$this->template->content = View::forge('product/index', $data);
+		$this->template->content = View::forge('product/index', $data,false);
 
 	}
 
@@ -45,35 +45,53 @@ class Controller_Product extends Controller_Base
 		$data['products']= Model_Product::find('all',array(
 			'where' => array('slug' => $slug)));		
 		
-		$data['comments'] = Model_Comment::find('all',array(
-			'where' => array('product_id' => $data['products']['1']['id'])));
+		$data['comments'] = Model_Comment::find('all');
+		// $data['comments'] = Model_Comment::find('all',array(
+		// 	'where' => array('product_id' => $data['products']->id)));
 		$this->template->title = "product";
 		$this->template->content = View::forge('product/chitiet',$data,false);
 
 	}
 	public function action_addcart($id = null)
 	{ 
-		if(!isset($this->current_user)){
-			Session::set_flash('error','You have not login');
-			Response::redirect('product');
-		}
 		$product = Model_Product::find($id);
-		is_null($id) and Response::redirect('product');
-		$cart = Model_Cart::forge(array(
-			'product_id' => $product->id,
-			'price' => "",
-			"quantity" => "",	           
-			"user_id" => $this->current_user->id,	           
-			));
-		if ($cart and $cart->save())
-		{
-			Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
-			Response::redirect('product');
+		if(is_null($product)){
+			Session::set_flash("error","Dont add to cart");
+			Response::redirect('product/');
+		} 
+		$array = Session::get('cart');
+
+		if(is_null($array)){
+			Session::set('cart',array(0 => 
+				array(
+					'id' => $product->id,
+					'slug' => $product->slug,
+					'quantity' => $product->quantity,
+					'price' => $product->price,
+					'image' => $product->image,
+					'tensanpham' => $product->tensanpham
+					)
+				));
+			Session::set_flash("success","The first product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 		}
-		else
-		{
-			Session::set_flash('error', e('Could not save cart.'));
-		}
+		else{
+			if(is_null(Arr::search($array,$product->slug))){
+				Arr::insert($array, array( array(
+					'id' => $product->id, 
+					'slug' => $product->slug,
+					'price' => $product->price,
+					'image' => $product->image,
+					'quantity' => $product->quantity,
+					'tensanpham' => $product->tensanpham
+					)), 0);
+				Session::set('cart',$array);
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
+			}
+			else{
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
+			}
+		}			
+		Response::redirect('product/');
 	}
 
 }
