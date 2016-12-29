@@ -12,7 +12,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><?php  echo Html::anchor('home', 'Home'); ?></li>
-                    <li><?php  echo Html::anchor('sanpham', 'Shop Page'); ?></li>
+                    <li><?php  echo Html::anchor('product', 'Shop Page'); ?></li>
                     <li><?php  echo Html::anchor('category', 'Category'); ?></li>
                     <li><?php  echo Html::anchor('cart', 'Cart'); ?></li>
                     <?php if ($current_user): ?>

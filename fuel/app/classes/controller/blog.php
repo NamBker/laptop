@@ -14,7 +14,7 @@
 			// 	);
 			// $pagination = Pagination::forge('mypagination', $config);
 
-			// $data['posts'] = Model_Sanpham::query()
+			// $data['posts'] = Model_Product::query()
 			// ->rows_offset($pagination->offset)
 			// ->rows_limit($pagination->per_page)
 			// ->get();
@@ -23,7 +23,7 @@
 			// $data['pagination'] = $pagination->render();
 
 			// return the view
-			$data['posts']= Model_Sanpham::find('all');
+			$data['posts']= Model_Product::find('all');
 
 			$this->template->content = View::forge('blog/index',$data,false);
 			$this->template->title = "Home";

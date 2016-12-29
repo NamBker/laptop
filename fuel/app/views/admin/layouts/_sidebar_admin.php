@@ -105,7 +105,7 @@
 
 
           <li>
-            <a href="http://project.dev/admin/product/new">
+            <a href="http://project.dev/admin/product/create">
               <i class="fa fa-th"></i> <span>New Product</span>
               <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>

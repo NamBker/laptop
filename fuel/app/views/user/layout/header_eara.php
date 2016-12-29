@@ -17,7 +17,7 @@
                   </div>
               </div>
 
-              <div class="col-md-4">
+<!--               <div class="col-md-4">
                 <div class="header-right">
                     <ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small">
@@ -39,7 +39,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     </div> <!-- End header area -->

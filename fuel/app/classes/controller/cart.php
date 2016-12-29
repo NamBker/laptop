@@ -23,7 +23,7 @@ class Controller_Cart extends Controller_Base
 			Session::set_flash('error','You have not login');
 			Response::redirect('home');
 		}
-		$sanpham = Model_Sanpham::find($id);
+		$sanpham = Model_Product::find($id);
 		is_null($id) and Response::redirect('home');
 		$cart = Model_Cart::forge(array(
 			'product_id' => $sanpham->id,
@@ -34,7 +34,7 @@ class Controller_Cart extends Controller_Base
 			));
 		if ($cart and $cart->save())
 		{
-			Session::set_flash('success','Đã add sản phẩm vào cart');
+			Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 			Response::redirect('home');
 		}
 		else
@@ -44,8 +44,8 @@ class Controller_Cart extends Controller_Base
 	}
 
 	public function action_addcart($id = null){
-		$sanphams = Model_Sanpham::find($id);
-		if(is_null($sanphams)){
+		$product = Model_Product::find($id);
+		if(is_null($product)){
 			Session::set_flash("error","Dont add to cart");
 			Response::redirect('/');
 		} 
@@ -53,38 +53,38 @@ class Controller_Cart extends Controller_Base
 
 		if(is_null($array)){
 			Session::set('cart',array(0 => 
-				// $sanphams
+				// $product
 				// change $sanpham to add Many
 				array(
-					'id' => $sanphams->id,
-					'slug' => $sanphams->slug,
-					'quantity' => $sanphams->quantity,
-					'price' => $sanphams->price,
-					'image' => $sanphams->image,
-					'image' => $sanphams->image,
-					'tensanpham' => $sanphams->tensanpham
+					'id' => $product->id,
+					'slug' => $product->slug,
+					'quantity' => $product->quantity,
+					'price' => $product->price,
+					'image' => $product->image,
+					'image' => $product->image,
+					'tensanpham' => $product->tensanpham
 
-				// 'image' => $sanphams->image
+				// 'image' => $product->image
 					)
 				));
-			Session::set_flash("success","San pham dau tien duoc add to cart");
+			Session::set_flash("success","The first product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 		}
 		else{
-			if(is_null(Arr::search($array,$sanphams->slug))){
+			if(is_null(Arr::search($array,$product->slug))){
 				Arr::insert($array, array( array(
-					'id' => $sanphams->id, 
-					'slug' => $sanphams->slug,
-					'price' => $sanphams->price,
-					'image' => $sanphams->image,
-					'quantity' => $sanphams->quantity,
-					'tensanpham' => $sanphams->tensanpham
-					// 'image' => $sanphams->image
+					'id' => $product->id, 
+					'slug' => $product->slug,
+					'price' => $product->price,
+					'image' => $product->image,
+					'quantity' => $product->quantity,
+					'tensanpham' => $product->tensanpham
+					// 'image' => $product->image
 					)), 0);
 				Session::set('cart',$array);
-				Session::set_flash("success","San pham da duoc add to cart" );
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 			}
 			else{
-				Session::set_flash('success','Đã add sản phẩm vào cart');
+				Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was added to cart");
 			}
 			
 		}			
@@ -95,16 +95,16 @@ class Controller_Cart extends Controller_Base
 
 	public function action_delete($id = null)
 	{ 
-		$sanphams = Model_Sanpham::find($id);
+		$product = Model_Product::find($id);
 		$array['cart'] = Session::get('cart');
 		$array['count'] = 0;
 		foreach ($array['cart'] as $key=>$value) {
 		        $array['count']++;
 		}
 		if($array['count'] == 1){
-			if(!is_null(Arr::search($array,$sanphams->slug))){
+			if(!is_null(Arr::search($array,$product->slug))){
 					Session::delete('cart');
-					Session::set_flash("success","Xoa" );
+					Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was <b>delete</b> in cart");
 					Response::redirect('cart');
 				}
 		}
@@ -123,7 +123,7 @@ class Controller_Cart extends Controller_Base
 					));
 			}
 			else{
-				if(is_null(Arr::search($array,$sanphams->slug))){
+				if(is_null(Arr::search($array,$product->slug))){
 					Arr::insert($array, array( array(
 						'id' => $array['cart'][$i]['id'],
 						'slug' => $array['cart'][$i]['slug'],
@@ -135,7 +135,7 @@ class Controller_Cart extends Controller_Base
 				}
 				else{
 					$array['count']--;
-					Session::set_flash("success","Xoa" );
+					Session::set_flash("success","Product[<b style='color: red'>". $product->tensanpham."</b>] was <b>delete</b> in cart");
 				}
 			}
 		}		

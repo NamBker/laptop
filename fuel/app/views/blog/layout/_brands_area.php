@@ -13,7 +13,6 @@
                             <?php echo Asset::img('brand6.png') ?>
                             <?php echo Asset::img('brand1.png') ?>
                             <?php echo Asset::img('brand2.png') ?>
-                            
                         </div>
                     </div>
                 </div>

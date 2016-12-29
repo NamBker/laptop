@@ -95,7 +95,7 @@ class Controller_Admin extends Controller_Base
 	public function action_index()
 	{
 		$data['users'] = Model_User::count();
-		$data['product'] = Model_Sanpham::count();
+		$data['product'] = Model_Product::count();
 		$data['order'] = Model_Checkout::count();
 		$data['comment'] = Model_Comment::count();
 		$this->template->title = 'Dashboard';

@@ -26,7 +26,7 @@
                                      <?php echo Asset::img('product-2.jpg') ?>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/sanphamproduct/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="http://project.dev/product/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -40,7 +40,7 @@
                                      <?php echo Asset::img('product-3.jpg') ?>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/sanphamproduct/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="http://project.dev/product/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -55,7 +55,7 @@
                                      <?php echo Asset::img('product-4.jpg') ?>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/sanphamproduct/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="http://project.dev/product/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -70,7 +70,7 @@
                                      <?php echo Asset::img('product-5.jpg') ?>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/sanphamproduct/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="http://project.dev/product/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -85,7 +85,7 @@
                                      <?php echo Asset::img('product-6.jpg') ?>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="http://project.dev/sanphamproduct/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="http://project.dev/product/" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 

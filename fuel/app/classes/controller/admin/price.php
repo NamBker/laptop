@@ -45,7 +45,7 @@ class Controller_Admin_Price extends Controller_Admin
 					Session::set_flash('error', e('Could not save price.'));
 				}
 		}
- 		$view->set_global('sanphams', Arr::assoc_to_keyval(Model_Sanpham::find('all'), 'id', 'tensanpham'));
+ 		$view->set_global('sanphams', Arr::assoc_to_keyval(Model_Product::find('all'), 'id', 'tensanpham'));
 		$this->template->title = "Prices";
 		$this->template->content = $view;
 

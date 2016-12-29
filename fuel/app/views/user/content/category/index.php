@@ -120,7 +120,7 @@
                                <div class="container">
                                 <div class="row">
 
-                                    <?php foreach($sanphams as $post): ?>
+                                    <?php foreach($product as $post): ?>
                                      <div class="col-md-3 product1">
                                         <div class="product-container1">
                                             <?php echo Asset::img('product-1.jpg') ?>
@@ -143,7 +143,7 @@
                 <div class="tab-pane fade" id="tab2primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Samsung"){
 
                             ?>
@@ -179,7 +179,7 @@
                 <div class="tab-pane fade" id="tab3primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Sony"){
 
                             ?>
@@ -208,7 +208,7 @@
                 <div class="tab-pane fade" id="tab4primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "LG"){
 
                             ?>
@@ -235,7 +235,7 @@
                 <div class="tab-pane fade" id="tab5primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Iphone"){
 
                             ?>
@@ -263,7 +263,7 @@
                 <div class="tab-pane fade" id="tab6primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Xizaomi"){
 
                             ?>
@@ -290,7 +290,7 @@
                 <div class="tab-pane fade" id="tab7primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "HTC"){
 
                             ?>
@@ -318,7 +318,7 @@
                 <div class="tab-pane fade" id="tab8primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Asus"){
 
                             ?>
@@ -346,7 +346,7 @@
                 <div class="tab-pane fade" id="tab9primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Lennovo"){
 
                             ?>
@@ -373,7 +373,7 @@
                 <div class="tab-pane fade" id="tab10primary">
                   <div class="container">
                     <div class="row">
-                        <?php foreach($sanphams as $post):
+                        <?php foreach($product as $post):
                         if($post->category== "Oppo"){
 
                             ?>

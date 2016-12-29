@@ -32,7 +32,7 @@ class Controller_Admin_Priceimport extends Controller_Admin
 				'product_id' => Input::post('product_id'),
 				'quantity_import' => Input::post('quantity_import'),
 				));
-			$sanpham = Model_Sanpham::find($product_id);
+			$sanpham = Model_Product::find($product_id);
 			if(is_null($sanpham->quantity)){
 				$result = DB::update('sanphams')
 				->value("quantity", $quantity)
@@ -61,7 +61,7 @@ class Controller_Admin_Priceimport extends Controller_Admin
 				Session::set_flash('error', e('Could not save price.'));
 			}
 		}
-		$view->set_global('sanphams', Arr::assoc_to_keyval(Model_Sanpham::find('all'), 'id', 'tensanpham'));
+		$view->set_global('sanphams', Arr::assoc_to_keyval(Model_Product::find('all'), 'id', 'tensanpham'));
 		$this->template->title = "Prices import";
 		$this->template->content = $view;
 
