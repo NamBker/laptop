@@ -26,7 +26,7 @@
 </head>
 <body>
 	<?php include("layout/header_eara.php"); ?>
-	<?php include("layout/site_branding_eara.php"); ?>
+	<?php include("layout/logo_cart.php"); ?>
 	<?php include("layout/mainmenu_area.php"); ?>
 	<div class="product-big-title-area" >
 		<div class="container" style="background: url(img/crossword.png)">

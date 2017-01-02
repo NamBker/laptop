@@ -4,9 +4,10 @@ class Controller_Checkout extends Controller_Base
 	public $template = 'user/template';
 	public function action_index()
 	{
+		
 		$data['checkouts'] = Model_Checkout::find('all');
 		$this->template->title = "Checkout";
-		$this->template->content = View::forge('checkout/index', $data);
+		$this->template->content = View::forge('checkout/index', $data,false);
 
 	}
 

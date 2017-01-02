@@ -14,7 +14,22 @@
                 <div class="shopping-item">
                     <a href="#"  data-toggle="modal" data-target=".bd-example-modal-lg">
                         <i class="fa fa-shopping-cart"></i>
-                        Cart<span class="cart-amunt"></span>  <span class="product-count">5</span>
+                        Cart<span class="cart-amunt"></span>  <span class="product-count">
+                        <?php 
+                            $data['count'] = 0;
+                            $data['cart'] = Session::get('cart');
+                            if(is_null($data['cart'])){
+                                $data['count'] = 0;
+                                $data['cart'] = null;
+                            }
+                            else{
+                                foreach ($data['cart'] as $key=>$value) {
+                                    $data['count']++;
+                            }
+                            echo $data['count'];
+                            }     
+                        ?>
+                        </span>
                     </a>
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg">
@@ -52,7 +67,14 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <?php echo Html::anchor('checkout',"Checkout",array('class' => 'btn btn-primary' ) )?>
+                                <?php 
+                                if(is_null($this->current_user)){
+                                    echo Html::anchor('checkout',"Checkout",array('class' => 'btn btn-primary' ));  
+                                }
+                                else{
+                                    echo Html::anchor('user/checkout',"Checkout",array('class' => 'btn btn-primary' ));
+                                }
+                                ?>
                             </div>
                             </div>
                         </div>
