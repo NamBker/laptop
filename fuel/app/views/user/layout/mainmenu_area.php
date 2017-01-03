@@ -20,8 +20,8 @@
                     <?php else: ?>
                     <li><?php  echo Html::anchor('checkout', 'Checkout'); ?></li>
                    <?php endif; ?>
-                    <li><?php  echo Html::anchor('gioithieu', 'Store'); ?></li>
-                    <li><?php  echo Html::anchor('lienhe', 'Contact'); ?></li>
+                    <li><?php  echo Html::anchor('store', 'Store'); ?></li>
+                    <li><?php  echo Html::anchor('contact', 'Contact'); ?></li>
                </ul>
            </div>  
        </div>

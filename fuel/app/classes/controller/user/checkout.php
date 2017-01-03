@@ -34,7 +34,8 @@ class Controller_User_Checkout extends Controller_Base
 			$user = Model_User::find($this->current_user->id);
 			if(is_null($result['cart'])){
 				$result['count'] = 0;
-				Session::set_flash('error', 'Cart rong Null.');
+				Session::set_flash('error', 'Your cart is being null.Please choose product!');
+				Response::redirect('cart');
 			}
 			else{
 				foreach ($result['cart'] as $key=>$value) {
@@ -62,7 +63,6 @@ class Controller_User_Checkout extends Controller_Base
 					}
 				}
 			}
-			Session::set_flash('success', 'Order success !.');
 			Session::delete('cart');
 			Response::redirect('user/checkout');
 		}

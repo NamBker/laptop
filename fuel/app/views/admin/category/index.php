@@ -27,7 +27,7 @@
 </table>
 
 <?php else: ?>
-<p>No Categories.</p>
+
 
 <?php endif; ?><p>
 	<?php echo Html::anchor('admin/category/create', 'Add new Category', array('class' => 'btn btn-success')); ?>

@@ -89,19 +89,15 @@
         <div class="col-xs-6 col-md-offset-3">
           <div class="col-md-12">
             <h3>Address</h3>
-
             <div class="form-group">
               <label class="control-label">Your address</label>
               <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Address" name="address" value="<?php echo $user->address ?>" />
             </div>
-            
-
             <div class="form-group">
               <label class="control-label">Your address</label>
-              <textarea type="text" required="required" class="form-control" placeholder="Enter Your descreption" name="descreption"></textarea>
+              <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter descreption" name="descreption"/>
+              <!-- <textarea type="text" required="required" class="form-control" placeholder="Enter Your descreption" name="descreption"></textarea> -->
             </div>
-            
-
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
           </div>
         </div>
@@ -124,7 +120,7 @@
                         <div class="container-fluid bd-example-row">
                           <div class="row">
                             <div class="col-md-2"><?php echo $data['count'] ?></div>
-                            <div class="col-md-4"><?php echo $value['tensanpham'] ?></div>
+                            <div class="col-md-4"><?php echo $value['tensanpham'] ?></div>  
                             <div class="col-md-4"><?php echo Asset::img($value['image'],array('class' => "shop_thumbnail","width" => "50", "height" => "50" )) ?></div>
                             <div class="col-md-2">£ <?php echo Num::quantity($value['price']);   ?></div>
                           </div>
@@ -133,7 +129,7 @@
                     }
                 } 
                 ?>
-            <button class="btn btn-success btn-lg pull-right" type="submit">Order</button>
+            <input class="btn btn-success btn-lg pull-right" type="submit" value="order">
           </div>
         </div>
       </div>

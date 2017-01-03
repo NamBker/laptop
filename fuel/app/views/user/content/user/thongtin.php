@@ -76,7 +76,7 @@
           <a href="#" class="active" id="login-form-link">User</a>
         </div>
         <div class="col-xs-6">
-          <a href="http://project.dev/user/logout">Logout</a>
+        <?php  echo Html::anchor('user/logout','Logout'); ?>
         </div>
       </div>
       <hr>

@@ -43,7 +43,7 @@
 											</tr>
 											<tr>
 												<td>Email</td>
-												<td><a href="mailto:info@support.com"><?php echo $users->email ?></a></td>
+												<td><a href="#"><?php echo $users->email ?></a></td>
 											</tr>
 											<td>Phone Number</td>
 											<td>123-4567-890(Landline)<br><br><?php echo $users->phone; ?>(Mobile)

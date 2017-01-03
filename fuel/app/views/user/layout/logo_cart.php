@@ -4,7 +4,7 @@
             <div class="col-sm-6">
                 <div class="logo">
                     <h1>
-                        <a href="./">
+                        <a href="/">
                             <?php echo Asset::img('logo.png') ?>
                         </a>
                     </h1>
