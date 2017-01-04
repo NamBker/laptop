@@ -38,10 +38,9 @@
 			<div class="col-md-8">
 				<div class="product-content-right">
 					<div class="woocommerce">
-						<h4>Liên hệ</h4>
 						<div class="rows">	
 							<div class="col-md-8 gioithieu">
-								<h2>Liên hệ</h2>
+								<h2>Contact</h2>
 								<br>
 								<?php if ($lienhes):
 									foreach ($lienhes as $item): ?>		
@@ -51,7 +50,7 @@
 									<?php echo $item->body; ?>
 									<?php endforeach; ?>	
 								<?php else: ?>
-									<p>No Posts.</p>
+									<p>Null</p>
 								<?php endif; ?>
 							</div>
 						</div>

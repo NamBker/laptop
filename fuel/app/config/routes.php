@@ -55,4 +55,5 @@ return array(
 
 	'user/checkout/create' => 'user/checkout/create',
 	'cart/delete/(:any)' => 'cart/delete/$1',
+	'cart/deleteall' => 'cart/delete_all',
 );

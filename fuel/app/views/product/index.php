@@ -30,6 +30,7 @@
         </div>
     </div>
 </div>
+</div>
 
 <script>
     $(".add-to-cart-link").click(function(){

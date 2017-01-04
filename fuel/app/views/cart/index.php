@@ -52,7 +52,7 @@
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="woocommerce">
-                        <form method="post" action="#">
+                    <?php echo Form::open(array('action' => 'user/checkout/', 'method' => 'post')); ?>
                             <table cellspacing="0" class="shop_table cart">
                                 <thead>
                                     <tr>
@@ -75,13 +75,11 @@
                                         </td>
 
                                         <td class="product-thumbnail">
-                                            <a href="http://project.dev/product/<?php echo $cart[$i]['id'] ?>">
                                                 <?php echo Asset::img($cart[$i]['image'],array('class' => "shop_thumbnail","width" => "145", "height" => "145" )) ?>
-                                            </a>
                                         </td>
 
                                         <td class="product-name">
-                                            <a href="single-product.html"><?php echo $cart[$i]['tensanpham'] ?></a> 
+                                            <?php echo $cart[$i]['tensanpham'] ?>
                                         </td>
 
                                         <td class="product-price">
@@ -107,18 +105,12 @@
 
                                     <tr>
                                         <td class="actions" colspan="6">
-                                            <div class="coupon">
-                                                <label for="coupon_code">Coupon:</label>
-                                                <input type="text" placeholder="Coupon code" value="" id="coupon_code" class="input-text" name="coupon_code">
-                                                <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
-                                            </div>
-                                            <input type="submit" value="Update Cart" name="update_cart" class="button">
-                                            <input type="submit" value="Checkout" name="proceed" class="checkout-button button alt wc-forward">
+                                            <input type="submit" value="Checkout" name="proceed" class="checkout-button button alt wc-forward" style="float:right;">
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </form>
+                        <?php echo Form::close(); ?>
 
                         <div class="cart-collaterals">
 

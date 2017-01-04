@@ -39,14 +39,14 @@
           <div class="col-md-8">
             <div class="product-content-right">
              <div class="woocommerce">
-              <h2>Giới thiệu</h2>
+              <h2>Store</h2>
               <?php if ($gioithieus):
               foreach ($gioithieus as $item): ?>		
               <h3><?php echo $item->title; ?></h3>
                  <?php echo $item->body; ?>
                  <?php endforeach; ?>	
                 <?php else: ?>  
-                   <p>No Posts.</p>
+                   <p>Null</p>
                 <?php endif; ?>
               </div>                     
             </div>  
