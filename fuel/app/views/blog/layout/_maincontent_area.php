@@ -7,7 +7,8 @@
                 <div class="latest-product">
                     <h2 class="section-title">Latest Products</h2>
                     <div class="product-carousel">
-                        <?php foreach($posts as $post): ?>
+                        <?php 
+                        foreach($posts as $post): ?>
                             <div class="single-product">
                                 <div class="product-f-image">
                                    <?php echo Asset::img($post->image,array('style' => 'width:212px; height:264px;')) ?>

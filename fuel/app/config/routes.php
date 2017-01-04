@@ -49,6 +49,9 @@ return array(
 	'checkout' => 'checkout/index',
 	'checkout/create' => 'checkout/create', 
 	'user/checkout' => 'user/checkout/index',
+	'user/order' => 'user/checkout/order',
+	'user/order/(:any)' => 'user/checkout/delete/$1',
+
 	'user/checkout/create' => 'user/checkout/create',
 	'cart/delete/(:any)' => 'cart/delete/$1',
 );

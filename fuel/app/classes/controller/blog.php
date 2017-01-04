@@ -23,6 +23,9 @@
 			// $data['pagination'] = $pagination->render();
 
 			// return the view
+			
+			// Set the limit
+			
 			$data['posts']= Model_Product::find('all');
 
 			$this->template->content = View::forge('blog/index',$data,false);

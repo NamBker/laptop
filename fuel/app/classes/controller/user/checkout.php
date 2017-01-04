@@ -9,6 +9,12 @@ class Controller_User_Checkout extends Controller_Base
 		$this->template->content = View::forge('user/checkout/index', $data);
 
 	}
+	public function action_order()
+	{
+		$data['order'] = Model_Checkout::find('all');
+		$this->template->title = "Checkout";
+		$this->template->content = View::forge('user/checkout/order', $data);
+	}
 
 	public function action_view($id = null)
 	{
@@ -63,8 +69,9 @@ class Controller_User_Checkout extends Controller_Base
 					}
 				}
 			}
+			Session::set_flash('success', 'Your had order!');
 			Session::delete('cart');
-			Response::redirect('user/checkout');
+			Response::redirect('user/order');
 		}
 	}
 
@@ -124,21 +131,18 @@ class Controller_User_Checkout extends Controller_Base
 
 	public function action_delete($id = null)
 	{
-		is_null($id) and Response::redirect('checkout');
-
+		is_null($id) and Response::redirect('user/checkout');
 		if ($checkout = Model_Checkout::find($id))
 		{
 			$checkout->delete();
-
 			Session::set_flash('success', 'Deleted checkout #'.$id);
 		}
-
 		else
 		{
 			Session::set_flash('error', 'Could not delete checkout #'.$id);
 		}
 
-		Response::redirect('checkout');
+		Response::redirect('user/order');
 
 	}
 

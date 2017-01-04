@@ -8,10 +8,10 @@
                         <div class="product-overlay"></div>
                         <div class="product-icon2">
                             <?php echo Html::anchor('#', '<i class="fa fa-shopping-cart"></i>', array('class' => 'add-to-cart-link','value' => $post->id, 'name'=>  $post->tensanpham  )); ?>
-                            <a href="http://project.dev/product/search/<?php echo $post->slug; ?>" class="view-details-link"><i class="fa fa-link"></i></a>
+                            <?php echo Html::anchor('product/search/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link')); ?>
                         </div>
                     </div>
-                    <h4><a href="http://project.dev/product/"><?php echo $post->tensanpham; ?></a></h4>
+                    <h4> <?php echo Html::anchor('product/'.$post->slug, $post->tensanpham); ?>
                     <div class="product-carousel-price">
                         <ins>$700.00</ins> <del>$100.00</del>
                     </div> 

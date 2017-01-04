@@ -45,22 +45,13 @@
       <li><?php  
         echo Html::anchor('admin/user','<i class="fa fa-user"></i> 
           <span>Users</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>'); 
+         '); 
         ?>
       </li>
       <li>
         <a href="#">
           <i class="fa fa-envelope"></i> 
-          <span>Messages</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>
+          <span>Order</span>
         </a>
       </li>
 
@@ -75,10 +66,7 @@
         <ul class="treeview-menu">
           <li><?php  echo Html::anchor('admin/product','<i class="fa fa-th-list"></i> List Product'); ?></li>
           <li><?php  echo Html::anchor('admin/product/create','<i class="fa fa-circle-o"></i> New Product'); ?></li>
-          <li><a href=""><i class="fa fa-circle-o"></i>Favorite Products</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i>Stop sell products</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i> Add New Products</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i>Edit Product</a></li>
+          <li><a href=""><i class="fa fa-circle-o"></i>Lastest products</a></li>
         </ul>
       </li>
 

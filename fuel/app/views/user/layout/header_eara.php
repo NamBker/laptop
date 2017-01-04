@@ -6,9 +6,8 @@
                         <ul>
                             <?php if ($current_user): ?>
                                 <li><?php  echo Html::anchor('user/thongtin', '<i class="fa fa-user"></i> My Account'); ?></li>
-                                <li><?php  echo Html::anchor('wishlist', '<i class="fa fa-heart"></i> Wishlist'); ?></li>
-                                <li><?php  echo Html::anchor('cart', '<i class="fa fa-user"></i> My Cart'); ?></li>
-                                <li><?php  echo Html::anchor('checkout', '<i class="fa fa-user"></i> Checkout'); ?></li>
+                                <li><?php  echo Html::anchor('user/order', '<i class="fa fa-heart"></i> Order'); ?></li>
+                                <li><?php  echo Html::anchor('user/checkout', '<i class="fa fa-user"></i> Checkout'); ?></li>
                                 <li><?php  echo Html::anchor('user/thongtin', '<i class="fa fa-user"></i>'.$current_user->username); ?></li>
                             <?php else: ?>
                             <li><?php  echo Html::anchor('dangnhap', '<i class="fa fa-user"></i> Login'); ?></li>

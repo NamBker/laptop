@@ -1,5 +1,3 @@
-
-
 <div class="single-product-area">
   <div class="zigzag-bottom"></div>
   <div class="container">
@@ -12,7 +10,6 @@
             <input type="submit" value="Search">
           </form>
         </div>
-
         <div class="single-sidebar">
           <h2 class="sidebar-title">Products</h2>
           <div class="thubmnail-recent">
@@ -105,9 +102,6 @@
                 </div>
               </div>
             </form>
-
-
-
           </div>
         </div>
       </div>
