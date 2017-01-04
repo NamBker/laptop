@@ -123,18 +123,14 @@
                 <option>Lenovo</option>
               </select>
             </div>
-
-
-
           </div>
           <!-- /.box-body -->
-
-
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <input type="submit" class="btn btn-primary" value="Save">
           </div>
           <!-- /.box-footer -->
         </div>
-      </form>
-
+        </div>
+       <?php echo Form::close(); ?>
     </div>
+    </section>

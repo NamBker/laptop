@@ -9,9 +9,9 @@
 
 <fieldset>
 	<div class="form-group">
-		<?php echo Form::label('Title', 'title', array('class'=>'control-label')); ?>
+		<?php echo Form::label('Address', 'title', array('class'=>'control-label')); ?>
 
-		<?php echo Form::input('title', Input::post('title', isset($gioithieu) ? $gioithieu->title : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Title')); ?>
+		<?php echo Form::textarea('title', Input::post('title', isset($gioithieu) ? $gioithieu->title : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Address')); ?>
 
 	</div>
 	<div class="form-group">
@@ -22,15 +22,9 @@
 	</div>
 
 	<div class="form-group">
-		<?php echo Form::label('Body', 'body', array('class'=>'control-label')); ?>
+		<?php echo Form::label('Phone store', 'body', array('class'=>'control-label')); ?>
 
-		<?php echo Form::textarea('body', Input::post('body', isset($gioithieu) ? $gioithieu->body : ''), array('class' => 'col-md-8 form-control', 'rows' => 8, 'placeholder'=>'Body')); ?>
-
-	</div>
-	<div class="form-group">
-		<?php echo Form::label('Slug', 'slug', array('class'=>'control-label')); ?>
-
-		<?php echo Form::input('slug', Input::post('slug', isset($gioithieu) ? $gioithieu->slug : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Slug')); ?>
+		<?php echo Form::input('body', Input::post('body', isset($gioithieu) ? $gioithieu->body : ''), array('class' => 'col-md-8 form-control', 'rows' => 8, 'placeholder'=>'Phone store')); ?>
 
 	</div>
 	<div class="form-group">

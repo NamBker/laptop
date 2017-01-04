@@ -101,13 +101,11 @@ class Controller_User_Checkout extends Controller_Base
 
 				Response::redirect('checkout');
 			}
-
 			else
 			{
 				Session::set_flash('error', 'Could not update checkout #' . $id);
 			}
 		}
-
 		else
 		{
 			if (Input::method() == 'POST')

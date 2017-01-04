@@ -3,10 +3,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Listing product</h3>
+              <h3 class="box-title">Lastest product</h3>
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="search" class="light-table-filter form-control pull-right" data-table="order-table" placeholder="Search">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
                   <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                   </div>
@@ -15,8 +15,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table class="table table-hover order-table">
-              <thead>
+              <table class="table table-hover">
                 <tr>
                   <th>ID</th>
                   <th>Product</th>
@@ -24,8 +23,6 @@
                   <th>Category</th>
                   <th>Reason</th>
                 </tr>
-                </thead>
-                <tbody>
               <?php foreach ($product as $item): ?>
                 <tr>
                   <td><?php echo $item->id; ?></td>
@@ -95,45 +92,3 @@
   <?php echo Html::anchor('admin/product/create', 'Add new product', array('class' => 'btn btn-success')); ?>
 
 </p>
-
-<script>
-  (function(document) {
-  'use strict';
-
-  var LightTableFilter = (function(Arr) {
-
-    var _input;
-
-    function _onInputEvent(e) {
-      _input = e.target;
-      var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
-      Arr.forEach.call(tables, function(table) {
-        Arr.forEach.call(table.tBodies, function(tbody) {
-          Arr.forEach.call(tbody.rows, _filter);
-        });
-      });
-    }
-
-    function _filter(row) {
-      var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
-      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-    }
-
-    return {
-      init: function() {
-        var inputs = document.getElementsByClassName('light-table-filter');
-        Arr.forEach.call(inputs, function(input) {
-          input.oninput = _onInputEvent;
-        });
-      }
-    };
-  })(Array.prototype);
-
-  document.addEventListener('readystatechange', function() {
-    if (document.readyState === 'complete') {
-      LightTableFilter.init();
-    }
-  });
-
-})(document);
-</script>

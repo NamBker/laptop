@@ -4,40 +4,15 @@
 		public $template = 'user/template';
 		public function action_index()
 		{
-			// Session::delete('cart');
-			// $config = array(
-			// 	'pagination_url' => 'http://project.dev/blog/index',
-			// 	'total_items'    => Model_Post::count(),
-			// 	'per_page'       => 10,
-			// 	'uri_segment'    => 3,
-
-			// 	);
-			// $pagination = Pagination::forge('mypagination', $config);
-
-			// $data['posts'] = Model_Product::query()
-			// ->rows_offset($pagination->offset)
-			// ->rows_limit($pagination->per_page)
-			// ->get();
-
-			// // we pass the object, it will be rendered when echo'd in the view
-			// $data['pagination'] = $pagination->render();
-
-			// return the view
-			
-			// Set the limit
-			
-			$data['posts']= Model_Product::find('all');
-
+			//  // In ra cac san pham 3 thang gan day
+			$data['posts'] =Model_Product::find('all', 
+			array('where' => array(array('created_at', '>', time()-7257600))));
 			$this->template->content = View::forge('blog/index',$data,false);
 			$this->template->title = "Home";
 		}
-
-
-
 		public function action_view($slug)
 		{
 			$post = Model_Post::find_by_slug($slug, array('related' => array('user', 'comments')));
-			
 			$this->template->title = $post->title;
 			$this->template->content = View::forge('blog/view', array(
 				'post' => $post,

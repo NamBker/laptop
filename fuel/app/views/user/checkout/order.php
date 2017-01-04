@@ -39,7 +39,7 @@
                   <<td><?php echo $item->price ?></td>
                   
                   <td>
-                    <?php echo Html::anchor('user/order/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+                    <?php echo Html::anchor('user/order/'.$item->id, 'Destroy', array('onclick' => "return confirm('Are you sure?')")); ?>
                   </td>
                 </tr>
                 <?php 

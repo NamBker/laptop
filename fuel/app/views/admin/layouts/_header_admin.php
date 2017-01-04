@@ -37,8 +37,6 @@
               <div class="pull-left">
                 <?php  echo Html::anchor('admin/logout','Sign out',array('class' => 'btn btn-default btn-flat')); ?>
               </div>
-              
-              
             </li>
           </ul>
         </li>

@@ -13,6 +13,7 @@ return array(
 	'admin/product/search' => array('admin/product/search','name' => 'admin_product_index'),
 	'admin/product/search/(:category)' => array('admin/product/show_by_category/$1','name' => 'admin_product_show_by_category'),
 	'admin/product/delete/(:any)' => 'admin/product/delete/$1',
+	'admin/product/last' => 'admin/product/last',
 	'admin/user/view/(:any)' => 'admin/user/thongtin/$1',
 	'admin/user/delete/(:any)' => 'admin/user/delete/$1',
 	'admin/user/edit/(:any)' => 'admin/user/edit/$1',

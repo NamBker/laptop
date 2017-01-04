@@ -1,123 +1,163 @@
+
+<script>
+  $(document).ready(function () {
+    var navListItems = $('div.setup-panel div a'),
+    allWells = $('.setup-content'),
+    allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+      e.preventDefault();
+      var $target = $($(this).attr('href')),
+      $item = $(this);
+
+      if (!$item.hasClass('disabled')) {
+        navListItems.removeClass('btn-primary').addClass('btn-default');
+        $item.addClass('btn-primary');
+        allWells.hide();
+        $target.show();
+        $target.find('input:eq(0)').focus();
+      }
+    });
+
+    allNextBtn.click(function(){
+      var curStep = $(this).closest(".setup-content"),
+      curStepBtn = curStep.attr("id"),
+      nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+      curInputs = curStep.find("input[type='text'],input[type='url']"),
+      isValid = true;
+
+      $(".form-group").removeClass("has-error");
+      for(var i=0; i<curInputs.length; i++){
+        if (!curInputs[i].validity.valid){
+          isValid = false;
+          $(curInputs[i]).closest(".form-group").addClass("has-error");
+        }
+      }
+
+      if (isValid)
+        nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+  });
+</script>
+
 <div class="single-product-area">
-	<div class="zigzag-bottom"></div>
-	<div class="container">
-		<div class="row">
+  <div class="zigzag-bottom"></div>
+  <div class="container" style="
+  border: 2px solid #a1a1a1; 
+  padding: 10px 40px; 
+  background: #dddddd;
+  border-radius: 25px;">
+  <div class="row">
+    <div class="stepwizard col-md-offset-3">
+      <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+          <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+          <p>Customer</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <p>Address</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <p>Complete</p>
+        </div>
+      </div>
+    </div>
+    <?php echo Form::open(array('action' => 'user/checkout/create', 'method' => 'post')); ?>
+    <div class="row setup-content" id="step-1">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3>Customer</h3>
+          <div class="form-group">
+            <label class="control-label">Your name</label>
+            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name"  name="username"  />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Your phone</label>
+            <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Your Email</label>
+            <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Email"  name="email" />
+          </div>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3>Address</h3>
+          <div class="form-group">
+            <label class="control-label">Your address</label>
+            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Address" name="address" value= />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Your descreption</label>
+            <input  type="text"  class="form-control" placeholder="Enter descreption" name="description"/>
+            <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+              <label class="" for="billing_phone">Date receive<abbr title="required" class="required">*</abbr>
+              </label>
+
+              <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' required="required" class="form-control" name="datereceive" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+              <script type="text/javascript">
+                $(function () {
+                  $('#datetimepicker1').datetimepicker();
+                });
+              </script>
+
+            </p>
+          </div>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3>Complete</h3>
+          <?php 
+          $data['count'] = 0;
+          $data['cart'] = Session::get('cart');
+          if(is_null($data['cart'])){
+            $data['count'] = 0;
+            $data['cart'] = null;
+          }
+          else{
+            foreach ($data['cart'] as $key=>$value) {
+              $data['count']++;
+              ?>
+              <div class="container-fluid bd-example-row">
+                <div class="row">
+                  <div class="col-md-2"><?php echo $data['count'] ?></div>
+                  <div class="col-md-4"><?php echo $value['tensanpham'] ?></div>  
+                  <div class="col-md-4"><?php echo Asset::img($value['image'],array('class' => "shop_thumbnail","width" => "50", "height" => "50" )) ?></div>
+                  <div class="col-md-2">£ <?php echo Num::quantity($value['price']);   ?></div>
+                </div>
+              </div>
+              <?php
+            }
+          } 
+          ?>
+          <input class="btn btn-success btn-lg pull-right" type="submit" value="order">
+        </div>
+      </div>
+    </div>
+    <?php echo Form::close(); ?>
+  </div>
+</div>
+</div>
 
 
-			<div class="col-md-8">
-				<div class="product-content-right">
-					<div class="woocommerce">
-						<div class="woocommerce-info">Check User? <a class="showlogin collapsed" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
-						</div>
-						<form id="login-form-wrap" class="login collapse" method="post" style="height: 50px;" action="http://project.dev/dangnhap">
-							<p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.</p>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-6 col-sm-offset-3">
-										<input type="email" name="email" id="username" tabindex="1" class="form-control" placeholder="Email" value="" required>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-6 col-sm-offset-3">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group text-center">
-								<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-								<label for="remember"> Remember Me</label>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-6 col-sm-offset-3">
-										<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="text-center">
-											<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-						<div class="woocommerce-info">Check address? <a class="showcoupon collapsed" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to en	ter your code</a>
-						</div>
-						<?php echo Form::open(array('action' => 'checkout/create', 'method' => 'post','style' =>"height: 50px",'id ' => "coupon-collapse-wrap",'class' =>'checkout_coupon collapse')); ?>
-						<div id="customer_details" class="col-md-12">
-							<div class="woocommerce-billing-fields">
-								<h3>Billing Details</h3>
-								<p id="billing_first_name_field" class="form-row form-row-first validate-required">
-									<label class="" for="billing_first_name">Your Name <abbr title="required" class="required">*</abbr>
-									</label>
-									<input type="text" value="" placeholder="" id="billing_first_name" name="username" class="input-text " required>
-								</p>
-								<div class="clear"></div>
-
-								<p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-									<label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr>
-									</label>
-									<input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required>
-								</p>
-								<div class="clear"></div>
-								<p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
-									<label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr>
-									</label>
-									<input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required>
-								</p>
-								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-									<label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr>
-									</label>
-									<input type="text" value="" placeholder="" id="billing_phone" name="phone" class="input-text " required>
-								</p>
-								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-									<label class="" for="billing_phone">Description <abbr title="required" class="required">*</abbr>
-									</label>
-									<input type="text" value="" placeholder="" id="billing_phone" name="description" class="input-text " required>
-								</p>
-
-								<p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-									<label class="" for="billing_phone">Description <abbr title="required" class="required" >*</abbr>
-									</label>
-									<div class="container">
-										<div class="row">
-											<div class='col-sm-6'>
-												<div class="form-group">
-													<div class='input-group date' id='datetimepicker1'>
-														<input type='text' class="form-control" name="datereceive" required>
-														<span class="input-group-addon">
-															<span class="glyphicon glyphicon-calendar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-											<script type="text/javascript">
-												$(function () {
-													$('#datetimepicker1').datetimepicker();
-												});
-											</script>
-										</div>
-									</div>
-								</p>
-
-								<div class="form-group">
-									<div class="row">
-										<div class="col-sm-6 col-sm-offset-3">
-											<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="CHECK OUT">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php echo Form::close(); ?>
-					</div>                    
-				</div>
-			</div>
-		</div>
-	</div>

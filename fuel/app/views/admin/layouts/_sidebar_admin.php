@@ -65,7 +65,7 @@
         <ul class="treeview-menu">
           <li><?php  echo Html::anchor('admin/product','<i class="fa fa-th-list"></i> List Product'); ?></li>
           <li><?php  echo Html::anchor('admin/product/create','<i class="fa fa-circle-o"></i> New Product'); ?></li>
-          <li><a href=""><i class="fa fa-circle-o"></i>Lastest products</a></li>
+          <li><?php  echo Html::anchor('admin/product/last','<i class="fa fa-circle-o"></i>Lastest products'); ?></li>
         </ul>
       </li>
 

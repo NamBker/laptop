@@ -22,7 +22,7 @@
 							<div class="form-group">
 								<?php echo Form::label('Email', 'body', array('class'=>'control-label')); ?>
 
-								<?php echo Form::input('body', Input::post('body', isset($lienhe) ? $lienhe->body : ''), array('class' => 'col-md-8 form-control', 'rows' => 8, 'placeholder'=>'Email')); ?>
+								<?php echo Form::input('body', Input::post('body', isset($lienhe) ? $lienhe->body : ''), array('class' => 'col-md-8 form-control', 'rows' => 8, 'placeholder'=>'Email','type' =>'email')); ?>
 
 							</div>
 							<div class="form-group">
