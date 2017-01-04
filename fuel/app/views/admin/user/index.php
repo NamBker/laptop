@@ -22,7 +22,7 @@
 						<tbody><tr>
 							<th>ID</th>
 							<th>User</th>
-							<th>Date</th>
+							<th>Address</th>
 							<th>Phone</th>
 						</tr>
 						<?php foreach ($users as $item): ?>	

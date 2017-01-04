@@ -1,11 +1,10 @@
-<h2>Listing Gioithieus</h2>
+<h2>Store</h2>
 <br>
 <?php if ($gioithieus): ?>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th>Title</th>
-
 			<th>Body</th>
 			<th>User id</th>
 			<th></th>
@@ -28,9 +27,9 @@
 </table>
 	
 <?php else: ?>
-<p>No Gioithieus.</p>
+<p>Null</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/gioithieu/create', 'Add new Gioithieu', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('admin/gioithieu/create', 'Add new Store', array('class' => 'btn btn-success')); ?>
 
 </p>

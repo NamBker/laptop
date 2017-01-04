@@ -1,13 +1,11 @@
 <section class="content">
   <div class="row">        
     <form role="form" method="post">
-      <div class="col-md-9">
+      <div class="col-md-6">
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">New Product</h3>
-
-<?php echo Form::open(array("class"=>"form-horizontal")); ?>
+			<?php echo Form::open(array("class"=>"form-horizontal")); ?>
 
 <fieldset>
 	<div class="form-group">
@@ -16,12 +14,10 @@
 		<?php echo Form::input('title', Input::post('title', isset($gioithieu) ? $gioithieu->title : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Title')); ?>
 
 	</div>
-	
 	<div class="form-group">
 		<?php echo Form::label('User', 'user_id'); ?>
 		<div class="input">
 			<?php echo Form::select('user_id', Input::post('user_id', isset($gioithieu) ? $gioithieu->user_id : $current_user->id), $users, array('class' => 'col-md-8 form-control')); ?>
-			
 		</div>
 	</div>
 

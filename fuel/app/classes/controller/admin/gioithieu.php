@@ -5,7 +5,7 @@ class Controller_Admin_Gioithieu extends Controller_Admin
 	public function action_index()
 	{
 		$data['gioithieus'] = Model_Gioithieu::find('all');
-		$this->template->title = "Giới Thiệu";
+		$this->template->title = "Store";
 		$this->template->content = View::forge('admin/gioithieu/index', $data);
 
 	}
@@ -14,7 +14,7 @@ class Controller_Admin_Gioithieu extends Controller_Admin
 	{
 		$data['gioithieu'] = Model_Gioithieu::find($id);
 
-		$this->template->title = "Gioithieu";
+		$this->template->title = "Store";
 		$this->template->content = View::forge('admin/gioithieu/view', $data);
 
 	}
@@ -47,7 +47,7 @@ class Controller_Admin_Gioithieu extends Controller_Admin
 
 
 	    $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
-		$this->template->title = "Giới Thiệu";
+		$this->template->title = "Store";
 		$this->template->content = $view;
 
 	}
@@ -86,7 +86,7 @@ class Controller_Admin_Gioithieu extends Controller_Admin
 	    // Set some data
 	    $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
 	 
-	    $this->template->title = "Edit Gioi thieu";
+	    $this->template->title = "Edit Store";
 	    $this->template->content = $view;
 	}
 

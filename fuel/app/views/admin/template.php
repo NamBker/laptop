@@ -74,7 +74,7 @@
 <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <?php echo Form::open(array('action' => 'http://project.dev/admin/login', 'method' => 'POST')); ?>
+    <?php echo Form::open(array('action' => 'admin/login', 'method' => 'POST')); ?>
 
     <?php if (isset($_GET['destination'])): ?>
         <?php echo Form::hidden('destination', $_GET['destination']); ?>

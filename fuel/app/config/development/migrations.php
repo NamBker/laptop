@@ -16,6 +16,7 @@ return array (
         7 => '008_create_prices',
         8 => '009_create_priceimports',
         9 => '010_create_products',
+        10 => '011_create_lienhes',
       ),
     ),
     'module' => 

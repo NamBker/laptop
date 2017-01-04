@@ -28,7 +28,7 @@
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <?php  echo Html::anchor('admin/profile'.$current_user->id,'Profile',array('class' => 'btn btn-default btn-flat')); ?>
+                <?php  echo Html::anchor('admin/profile/'.$current_user->id,'Profile',array('class' => 'btn btn-default btn-flat')); ?>
               </div>
               <div class="pull-right">
                 <?php  echo Html::anchor('admin/logout','Sign out',array('class' => 'btn btn-default btn-flat')); ?>

@@ -1,4 +1,4 @@
-<h2>New Gioithieu</h2>
+<h2>New Store</h2>
 <br>
 
 <?php echo render('admin/gioithieu/_form'); ?>

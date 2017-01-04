@@ -1,4 +1,4 @@
-<h2>Thêm cơ sở</h2>
+<h2>Add Contact</h2>
 <br>
 
 <?php echo render('admin/lienhe/_form'); ?>

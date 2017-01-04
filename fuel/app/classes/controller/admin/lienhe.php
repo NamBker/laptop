@@ -5,18 +5,15 @@ class Controller_Admin_Lienhe extends Controller_Admin
 	public function action_index()
 	{
 		$data['lienhe'] = Model_Lienhe::find('all');
-		$this->template->title = "Liên hệ";
+		$this->template->title = "Contact";
 		$this->template->content = View::forge('admin/lienhe/index', $data);
-
 	}
 
 	public function action_view($id = null)
 	{
 		$data['lienhe'] = Model_Lienhe::find($id);
-
-		$this->template->title = "Liên hệ";
+		$this->template->title = "Contact";
 		$this->template->content = View::forge('admin/lienhe/view', $data);
-
 	}
 
 	public function action_create($id = null)
@@ -29,7 +26,6 @@ class Controller_Admin_Lienhe extends Controller_Admin
 	            'slug' => Inflector::friendly_title(Input::post('title'), '-', true),
 	            'summary' => Input::post('summary'),
 	            'body' => Input::post('body'),
-	            'user_id' => Input::post('user_id'),
 	        ));
 
 				if ($lienhe and $lienhe->save())
@@ -47,7 +43,7 @@ class Controller_Admin_Lienhe extends Controller_Admin
 
 
 	    $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
-		$this->template->title = "Liên hệ";
+		$this->template->title = "Contact";
 		$this->template->content = $view;
 
 	}
@@ -64,7 +60,6 @@ class Controller_Admin_Lienhe extends Controller_Admin
 	        $post->slug = Inflector::friendly_title(Input::post('title'), '-', true);
 	        $post->summary = Input::post('summary');
 	        $post->body = Input::post('body');
-	        $post->user_id = Input::post('user_id');
 	 
 	        if ($post->save())
 	        {
@@ -86,7 +81,7 @@ class Controller_Admin_Lienhe extends Controller_Admin
 	    // Set some data
 	    $view->set_global('users', Arr::assoc_to_keyval(Model_User::find('all'), 'id', 'username'));
 	 
-	    $this->template->title = "Edit Gioi thieu";
+	    $this->template->title = "Edit Contact";
 	    $this->template->content = $view;
 	}
 

@@ -12,7 +12,6 @@ class Create_lienhes
 			'slug' => array('constraint' => 255, 'type' => 'varchar'),
 			'summary' => array('type' => 'text'),
 			'body' => array('type' => 'text'),
-			'user_id' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 

@@ -7,7 +7,6 @@ class Model_Lienhe extends \Orm\Model
 		'slug',
 		'summary',
 		'body',
-		'user_id',
 		'created_at',
 		'updated_at',
 	);
@@ -30,7 +29,6 @@ class Model_Lienhe extends \Orm\Model
 		$val->add_field('slug', 'Slug', 'required|max_length[255]');
 		$val->add_field('summary', 'Summary', 'required');
 		$val->add_field('body', 'Body', 'required');
-		$val->add_field('user_id', 'User Id', 'required|valid_string[numeric]');
 
 		return $val;
 	}

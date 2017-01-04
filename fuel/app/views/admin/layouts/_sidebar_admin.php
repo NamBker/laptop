@@ -48,13 +48,12 @@
          '); 
         ?>
       </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-envelope"></i> 
+      <li><?php  
+        echo Html::anchor('admin/order',' <i class="fa fa-envelope"></i> 
           <span>Order</span>
-        </a>
+         '); 
+        ?>
       </li>
-
       <li class="treeview">
         <a href="#">
           <i class="fa fa-laptop"></i>

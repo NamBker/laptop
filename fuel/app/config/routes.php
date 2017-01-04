@@ -16,7 +16,8 @@ return array(
 	'admin/user/view/(:any)' => 'admin/user/thongtin/$1',
 	'admin/user/delete/(:any)' => 'admin/user/delete/$1',
 	'admin/price/create' => 'admin/price/create',
-	'admin/user' => 'admin/user/index',
+	'admin/user' => 'admin/user/index',	
+	'admin/order' => 'admin/order/index',
 
 	// user
 	'user/thongtin' => 'user/thongtin',
