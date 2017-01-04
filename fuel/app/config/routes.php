@@ -15,9 +15,11 @@ return array(
 	'admin/product/delete/(:any)' => 'admin/product/delete/$1',
 	'admin/user/view/(:any)' => 'admin/user/thongtin/$1',
 	'admin/user/delete/(:any)' => 'admin/user/delete/$1',
+	'admin/user/edit/(:any)' => 'admin/user/edit/$1',
 	'admin/price/create' => 'admin/price/create',
 	'admin/user' => 'admin/user/index',	
 	'admin/order' => 'admin/order/index',
+	'admin/order/(:any)' => 'admin/order/confirm/$1',
 
 	// user
 	'user/thongtin' => 'user/thongtin',

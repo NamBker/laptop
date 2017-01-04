@@ -7,6 +7,22 @@ class Controller_Admin_Order extends Controller_Admin
 		$this->template->title = 'User';
 		$this->template->content = View::forge('admin/order/index',$data);
 	}
+	public function action_confirm($id = null)
+	{
+			$checkout = Model_Checkout::find($id);
+			$checkout->status = 1;
+			if ($checkout->save())
+			{
+				Session::set_flash('success', 'Updated checkout #' . $id);
+				Response::redirect('admin/order');
+			}
+			else
+			{
+				Session::set_flash('error', 'Could not update checkout #' . $id);
+				Response::redirect('admin/order');
+			}
+
+	}
 	public function action_thongtin($id = null)
 	{
 		$data['order'] = Model_Checkout::find($id);

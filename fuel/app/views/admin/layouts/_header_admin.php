@@ -30,9 +30,15 @@
               <div class="pull-left">
                 <?php  echo Html::anchor('admin/profile/'.$current_user->id,'Profile',array('class' => 'btn btn-default btn-flat')); ?>
               </div>
-              <div class="pull-right">
+              <div class="pull-left">
+                <?php  echo Html::anchor('admin/user/edit/'.$current_user->id,'Edit',array('class' => 'btn btn-default btn-flat')); ?>
+              </div>
+
+              <div class="pull-left">
                 <?php  echo Html::anchor('admin/logout','Sign out',array('class' => 'btn btn-default btn-flat')); ?>
               </div>
+              
+              
             </li>
           </ul>
         </li>

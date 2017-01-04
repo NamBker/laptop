@@ -34,7 +34,7 @@
 			                  <<td><?php echo $item->price ?></td>
 			                  
 			                  <td>
-			                    <?php echo Html::anchor('user/order/edit/'.$item->id, 'Click to Complete', array('onclick' => "return confirm('Are you sure?')")); ?>
+			                    <?php echo Html::anchor('admin/order/'.$item->id, 'Click to Complete', array('onclick' => "return confirm('Are you sure?')")); ?>
 			                  </td>
 			                </tr>
 			                <?php 
