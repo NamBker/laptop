@@ -20,6 +20,7 @@
                 <th>Product</th>
                 <th>Date</th>
                 <th>Status</th>
+                <th>Price</th>
                 <th></th>
               </tr>
               <?php foreach ($order as $item): 
@@ -35,6 +36,7 @@
                     echo "Ok";
                   }
                   ?></td>
+                  <<td><?php echo $item->price ?></td>
                   
                   <td>
                     <?php echo Html::anchor('user/order/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
