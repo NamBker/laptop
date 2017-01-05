@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <h2>
-                            <?php echo Html::anchor('product/'.$post->slug, $post->tensanpham)?>
+                            <?php echo Html::anchor('product/search/'.$post->slug, $post->tensanpham)?>
                             </h2>
                             <div class="product-carousel-price">
                                 <ins><?php echo $post->price ?></ins> <del>$100.00</del>
