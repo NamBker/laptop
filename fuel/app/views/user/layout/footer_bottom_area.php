@@ -1,5 +1,5 @@
 <div class="footer-bottom-area">
-    <div class="container">
+    <div class="container" style="padding-top: 30px;">
         <div class="row">
             <div class="col-md-8">
                 <div class="copyright">

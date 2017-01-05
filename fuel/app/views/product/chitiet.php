@@ -189,7 +189,7 @@
                                                     </div>
                                                 </div>
                                                 <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>  
+                                                <input type="submit" value="Sent">
                                             </div>
                                             <?php echo Form::close(); ?>
                                         <?php else: ?>
@@ -218,34 +218,44 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-                </div>                    
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                      <div class="page-header">
-                        <h1><small class="pull-right">45 comments</small> Comments </h1>
-                        </div> 
-                        <div class="comments-list">
-                                <?php foreach($comments as $cmt): ?>
-                               <div class="media">
-                                   <p class="pull-right"><small><?php echo Date::time_ago($cmt['created_at'])?></small></p>
-                                   <a class="media-left" href="#">
-                                      <img src="http://lorempixel.com/40/40/people/1/">
-                                  </a>
-                                  <div class="media-body">
-                                      <h4 class="media-heading user_name"><?php echo $cmt['name'] ?></h4>
-                                      <?php echo $cmt->message ?>
-                                      <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
-                                  </div>
-                                </div>
-                                <?php endforeach; ?>
-                        </div>
+        </div>                    
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+              <div class="page-header">
+                <h1><small class="pull-right"><?php echo $count ?> comments</small> Comments </h1>
+            </div> 
+            <div class="comments-list">
+                <?php foreach($comments as $cmt): ?>
+                    <hr style="border-width: 3px;">
+                 <div class="media">
+                     <p class="pull-right"><small><?php echo Date::time_ago($cmt['created_at'])?></small></p>
+                     <a class="media-left" href="#">
+                      <img src="http://lorempixel.com/40/40/people/1/">
+                  </a>
+                  <div class="media-body">
+                      <h4 class="media-heading user_name"><?php echo $cmt['name'] ?></h4>
+                      <?php echo $cmt->message ?>
+                      <p><small><a href="">Like</a>
+                          <?php 
+                          if(!is_null($this->current_user)){
+                             if($this->current_user->username == $cmt['name']){
+                                // echo Html::anchor('user/comment/'.$cmt['id'],' -Delete');
+
+                               echo Html::anchor('#', 'Delete', array('class' => 'Delete','value' =>$cmt['id']));
+                                }
+                        }
+                        ?></small></p>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <script>
     $(".add-to-cart-link").click(function(){
@@ -268,6 +278,33 @@
                 if(result == true){
                     console.log('This was logged in the callback: true '); 
                     window.location.href = 'product/add-to-cart/'+cartadd; 
+                }
+                else{
+                    console.log('This was logged in the callback: false');    
+                }
+            }
+        });
+    });
+
+       $(".Delete").click(function(){
+        var cartadd = $(this).attr('value');
+        bootbox.confirm({
+            message: "You want delete comment?",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success',
+                    url: '/'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if(result == true){
+                    console.log('This was logged in the callback: true '); 
+                    window.location = '/'+'user/comment/'+cartadd; 
                 }
                 else{
                     console.log('This was logged in the callback: false');    

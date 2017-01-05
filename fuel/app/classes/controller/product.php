@@ -31,6 +31,7 @@ class Controller_Product extends Controller_Base
 	{
 		is_null($id) and Response::redirect('product');
 
+
 		if ( ! $data['products'] = Model_Product::find($id))
 		{
 			Session::set_flash('error', 'Could not find product #'.$id);
@@ -43,10 +44,14 @@ class Controller_Product extends Controller_Base
 	public function action_search($slug = false){
 
 		$data['products']= Model_Product::find('all',array(
-			'where' => array('slug' => $slug)));		
+			'where' => array('slug' => $slug)));
+		foreach ($data['products'] as $key	) {
+			$id = $key['id'];
+		}
 		
-		$data['comments'] = Model_Comment::find('all');
-		// $data['comments'] = Model_Comment::find('all',array(
+		$data['comments'] = Model_Comment::find('all',array('where' => array('product_id' =>$id)));
+		$data['count'] = count($data['comments']);
+ 		// $data['comments'] = Model_Comment::find('all',array(
 		// 	'where' => array('product_id' => $data['products']->id)));
 		$this->template->title = "product";
 		$this->template->content = View::forge('product/chitiet',$data,false);

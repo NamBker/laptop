@@ -32,14 +32,7 @@ return array(
 	'home/add-to-cart/(:any)' => 'cart/add/$1',
 	'product/add-to-cart/(:any)' => 'product/addcart/$1',
 	'product' => 'product/index',
-	// category
-	'category/samsung'   => 'product/samsung',
-	'category/sony'      => 'product/sony',
-	'category/lg'        => 'product/lg',
-	'category/iphone'    => 'product/iphone',
-	'category/backbarry' => 'product/backbarry',
 	'product' => 'product/index',
-
 	'product/search/(:any)' => 'product/search/$1', 
 	// service lien he ///
 	'home'           => 'blog/index',
@@ -52,9 +45,11 @@ return array(
 	'category/add-to-cart/(:any)' => 'category/addcart/$1',
 	'checkout' => 'checkout/index',
 	'checkout/create' => 'checkout/create', 
+
 	'user/checkout' => 'user/checkout/index',
 	'user/order' => 'user/checkout/order',
 	'user/order/(:any)' => 'user/checkout/delete/$1',
+	'user/comment/(:any)' => 'user/comment/delete/$1',
 
 	'user/checkout/create' => 'user/checkout/create',
 	'cart/delete/(:any)' => 'cart/delete/$1',
