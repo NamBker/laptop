@@ -243,7 +243,7 @@
                             <?php echo Html::anchor('product/search/'.$post->slug, '<i class="fa fa-link"></i>', array('class' => 'view-details-link','value' => $post->id , 'name'=> $post->tensanpham)); ?>
                         </div>
                     </div>
-                    <h4><?php echo Html::anchor('product',$post->tensanpham); ?></h4>
+                    <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
                         <ins><?php echo $post->price ?></ins> <del>$100.00</del>
                     </div> 
