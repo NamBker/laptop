@@ -106,6 +106,10 @@
               <label for="exampleInputEmail1">Price</label>
               <input class="form-control" id="exampleInputEmail1" placeholder="Price" type="number" name="price">
             </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Price old</label>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Price Old" type="number" name="price_old">
+            </div>
             <div class="form-group" >
               <label>Category</label>
               <select class="form-control" name="category">

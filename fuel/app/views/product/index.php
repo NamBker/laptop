@@ -13,7 +13,7 @@
                     </div>
                     <h4> <?php echo Html::anchor('product/search/'.$post->slug, $post->tensanpham); ?>
                     <div class="product-carousel-price">
-                        <ins>$700.00</ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
                 </div>
             <?php endforeach; ?>

@@ -22,7 +22,6 @@
 				<?php echo Html::anchor('admin/price/view/'.$item->id, 'View'); ?> |
 				<?php echo Html::anchor('admin/price/edit/'.$item->id, 'Edit'); ?> |
 				<?php echo Html::anchor('admin/price/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
-
 			</td>
 		</tr>
 <?php endforeach; ?>	</tbody>

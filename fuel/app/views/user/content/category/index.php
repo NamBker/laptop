@@ -133,7 +133,7 @@
                                      </div>
                                      <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                                      <div class="product-carousel-price">
-                                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                                     </div> 
                                 </div>
                             <?php endforeach; ?>
@@ -161,7 +161,7 @@
                                <?php echo Html::anchor('product/search',$post->tensanpham); ?>
                            </h4>
                            <div class="product-carousel-price">
-                            <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                            <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                         </div> 
 
                     </div>
@@ -189,7 +189,7 @@
                      </div>
                      <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                      <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -218,7 +218,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -245,7 +245,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search/',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -273,7 +273,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -300,7 +300,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -328,7 +328,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -356,7 +356,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>
@@ -383,7 +383,7 @@
                     </div>
                     <h4><?php echo Html::anchor('product/search',$post->tensanpham); ?></h4>
                     <div class="product-carousel-price">
-                        <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                        <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                     </div> 
 
                 </div>

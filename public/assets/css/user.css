@@ -12,7 +12,9 @@
 .panel.with-nav-tabs .nav-justified{
   margin-bottom: -1px;
 }
-
+a{
+    text-decoration: none;
+}
 /********************************************************************/
 /*** PANEL PRIMARY ***/
 .with-nav-tabs.panel-primary .nav-tabs > li > a,

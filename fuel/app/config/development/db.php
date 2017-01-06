@@ -12,3 +12,13 @@ return array(
 		),
 	),
 );
+// return array(
+// 	'default' => array(
+// 		'connection'  => array(
+// 			'dsn'        => 'mysql:host=ustora.96.lt;dbname=u613725151_stora',
+// 			'username'   => 'u613725151_stora',
+// 			'password'   => '123456',
+// 		),
+// 	),
+// );
+

@@ -27,20 +27,6 @@
                             <ins>$700.00</ins> <del>$100.00</del>
                         </div>                             
                     </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
                 </div>
                 
                 <div class="single-sidebar">
@@ -58,9 +44,8 @@
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="product-breadcroumb">
-                        <a href="">Home</a>
-                        <a href="">Category Name</a>
-                        <a href="">Sony Smart TV - 2015</a>
+                        <?php echo Html::anchor('/', 'Home'); ?>
+                        <?php echo Html::anchor('category/', 'Category'); ?>
                     </div>
                     <?php foreach($products as $product): ?>
                         <div class="row">
@@ -82,7 +67,7 @@
                                 <div class="product-inner">
                                     <h2 class="product-name"><?php echo $product['tensanpham'] ?></h2>
                                     <div class="product-inner-price">
-                                        <ins>$<?php echo $product['price'] ?></ins> <del>$100.00</del>
+                                        <ins>$<?php echo $product['price'] ?></ins> <del>$<?php echo $product['price_old'] ?></del>
                                     </div>    
                                     <div class="quantity">
                                         <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">

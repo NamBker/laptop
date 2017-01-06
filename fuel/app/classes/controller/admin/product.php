@@ -54,6 +54,7 @@ class Controller_Admin_product extends Controller_Admin
 					'quantity' => Input::post('quantity'),
 					'image' => $config['new_name'].".jpg",
 					'price' => Input::post('price'),
+					'price_old' => Input::post('price_old'),
 					));
 
 				if ($product and $product->save())
@@ -105,6 +106,7 @@ class Controller_Admin_product extends Controller_Admin
 				$product->category = Input::post('category');
 				$product->quantity = Input::post('quantity');
 				$product->price = Input::post('price');
+				$product->price_old = Input::post('price_old');
 				if ($product->save())
 				{
 					Session::set_flash('success','Updated product #' . $id);
@@ -149,6 +151,7 @@ class Controller_Admin_product extends Controller_Admin
 				$product->quantity = Input::post('quantity');
 				$product->image =  $arr.".jpg";
 				$product->price = Input::post('price');
+				$product->price_old = Input::post('price_old');
 				if ($product->save())
 				{
 					Session::set_flash('success','Updated product #' . $id);

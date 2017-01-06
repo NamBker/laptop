@@ -26,6 +26,7 @@ class Model_Product extends \Orm\Model
 		'quantity',
 		'image',
 		'price',
+		'price_old',
 		'created_at',
 		'updated_at',
 	);

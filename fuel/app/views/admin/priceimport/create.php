@@ -64,9 +64,9 @@
 										<?php foreach ($prices as $item): ?>	
 											<tr>
 												<td><?php echo $item->id; ?></td>
-												<td><?php echo $item->price; ?></td>
+												<td><?php echo $item->price_import; ?></td>
 												<td><?php echo $item->product_id; ?></td>
-												<td><?php echo $item->quantity; ?></td>
+												<td><?php echo $item->quantity_import; ?></td>
 												<td><?php echo Html::anchor('admin/user/view/'.$item->id, 'View'); ?> |
 													<?php echo Html::anchor('admin/user/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 

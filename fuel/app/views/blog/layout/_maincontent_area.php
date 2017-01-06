@@ -21,7 +21,7 @@
                             <?php echo Html::anchor('product/search/'.$post->slug, $post->tensanpham)?>
                             </h2>
                             <div class="product-carousel-price">
-                                <ins><?php echo $post->price ?></ins> <del>$100.00</del>
+                                <ins>$<?php echo $post->price ?></ins> <del>$<?php echo $post->price_old ?></del>
                             </div> 
                         </div>
                     <?php endforeach; ?>

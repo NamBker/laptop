@@ -99,6 +99,10 @@
 							<th><?php echo $product->price; ?></th>
 						</tr>
 						<tr>
+							<th style="float:right;">Price old</th>
+							<th><?php echo $product->price_old; ?></th>
+						</tr>
+						<tr>
 							<th style="float:right;">Image</th>
 							<th><?php echo $product->image; ?></th>
 						</tr>

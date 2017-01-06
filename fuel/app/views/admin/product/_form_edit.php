@@ -110,6 +110,10 @@
                 <label for="exampleInputEmail1">Price</label>
                 <input class="form-control" id="exampleInputEmail1" placeholder="Price" type="number" value="<?php echo $product->price ?  $product->price : '' ?>" name="price">
               </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Price Old</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Price Old" type="number" value="<?php echo $product->price_old ?  $product->price_old : '' ?>" name="price_old">
+              </div>
               <label>Category</label>
               <select class="form-control" name="category">
                 <option>Samsung</option>

@@ -34,14 +34,14 @@ class Controller_Admin_Priceimport extends Controller_Admin
 				));
 			$sanpham = Model_Product::find($product_id);
 			if(is_null($sanpham->quantity)){
-				$result = DB::update('sanphams')
+				$result = DB::update('products')
 				->value("quantity", $quantity)
 				->where('id', '=',$product_id)
 				->execute();
 			}
 			else{
 				$quantity = $quantity + $sanpham->quantity;
-				$result = DB::update('sanphams')
+				$result = DB::update('products')
 				->value("quantity", $quantity)
 				->where('id', '=',$product_id)
 				->execute();
