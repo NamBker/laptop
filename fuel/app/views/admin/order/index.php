@@ -22,6 +22,7 @@
         <th>Date</th>
         <th>Status</th>
         <th>Price</th>
+        <th>Phone</th>
         <th></th>
       </tr>
     </thead>
@@ -42,6 +43,7 @@
         }
         ?></td>
         <td><?php echo $item->price ?></td>
+        <td><?php echo $item->phone ?></td>
         
         <td>
           <?php echo Html::anchor('admin/order/'.$item->id, 'Click to Complete', array('onclick' => "return confirm('Are you sure?')")); ?>

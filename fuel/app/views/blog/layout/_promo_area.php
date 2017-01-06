@@ -8,14 +8,14 @@
                         <p>30 Days return</p>
                     </div>
                 </div>',array('style' => 'color:#fff')); ?>
-                <?php echo Html::anchor('contact/','<div class="col-md-3 col-sm-6">
+                <?php echo Html::anchor('store/','<div class="col-md-3 col-sm-6">
                     <div class="single-promo promo2">
                         <i class="fa fa-truck"></i>
                         <p>Free shipping</p>
                     </div>
                 </div>',array('style' => 'color:#fff')); ?>
                 
-                <?php echo Html::anchor('contact','<div class="col-md-3 col-sm-6">
+                <?php echo Html::anchor('store','<div class="col-md-3 col-sm-6">
                     <div class="single-promo promo3">
                         <i class="fa fa-lock"></i>
                         <p>Secure payments</p>

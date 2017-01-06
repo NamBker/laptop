@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <?php echo Form::open(array('action' => 'user/checkout/create', 'method' => 'post')); ?>
+    <?php echo Form::open(array('action' => 'checkout/create', 'method' => 'post')); ?>
     <div class="row setup-content" id="step-1">
       <div class="col-xs-6 col-md-offset-3">
         <div class="col-md-12">

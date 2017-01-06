@@ -34,7 +34,7 @@ class Controller_Checkout extends Controller_Base
 			$result['cart'] = Session::get('cart');
 			if(is_null($result['cart'])){
 				$result['count'] = 0;
-				Session::set_flash('error', 'Cart rong Null.');
+				Session::set_flash('error', 'Cart Null.');
 			}
 			else{
 				foreach ($result['cart'] as $key=>$value) {
