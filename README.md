@@ -7,8 +7,8 @@
 
 ## Used
 * Xampp.
-* Sublimtext.
-* phpmyadmin.
+* Sublimtext
+* phpmyadmin
 ## Config
 * fuel/app/config/development/db.php (mysql have database name: fantastic, password: null, username: root)
 
